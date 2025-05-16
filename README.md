@@ -113,6 +113,7 @@ We encourage continued experimentation and dialogue through optional follow-up m
 
 The repository contains all materials used and generated during the workshop, organized for clarity and reuse:
 
+```
 ai-prog-workshop/
 │
 ├── AI_code_review.ipynb
@@ -138,6 +139,7 @@ ai-prog-workshop/
 │
 ├── README.md
 │ └─ You’re here — full overview of the workshop and materials
+```
 
 ---
 
