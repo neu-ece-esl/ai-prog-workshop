@@ -141,9 +141,6 @@ ai-prog-workshop/
 
 ---
 
-
----
-
 ## 🧑‍💻 Contributing & Continuing the Conversation
 
 We welcome contributions from instructors adapting these resources for their own contexts. You can:
