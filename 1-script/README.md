@@ -76,135 +76,32 @@ To generate a script that can process and visualize this data, you can use the f
 
 ## ✅ Sample Generated Script
 
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.ticker import ScalarFormatter
-import seaborn as sns
-from pathlib import Path
-import sys
+The AI-generated script is saved as [`analyze_latency.py`](analyze_latency.py) in this directory. The script reads CSV data files like [`pwm_sleep_edges_loaded.csv`](pwm_sleep_edges_loaded.csv), processes the edge timing information, and produces both statistical output and a visualization of the cumulative distribution function (CDF).
 
-def analyze_edge_latency(csv_file):
-    """
-    Analyze timing data from PulseCap and plot CDF of falling-to-rising edge latency.
-    
-    Args:
-        csv_file: Path to the CSV file containing edge timing data
-    """
-    try:
-        # Set visual style for plots
-        sns.set_style("whitegrid")
-        plt.figure(figsize=(10, 6))
-        
-        # Read the CSV file
-        print(f"Reading data from {csv_file}...")
-        data = pd.read_csv(csv_file, header=None)
-        
-        # Assign column names based on documentation
-        data.columns = ['SampleTime', 'EdgeType', 'SameEdgeDuration', 'OppositeEdgeDuration']
-        
-        # Extract only the RISING edges (EdgeType = 0)
-        rising_edges = data[data['EdgeType'] == 0]
-        
-        # The OppositeEdgeDuration column for rising edges gives us the FALLING→RISING latency
-        latencies = rising_edges['OppositeEdgeDuration']
-        
-        # Convert to microseconds for better readability
-        latencies_us = latencies * 1e6
-        
-        # Calculate basic statistics
-        stats = {
-            'count': len(latencies_us),
-            'mean': np.mean(latencies_us),
-            'median': np.median(latencies_us),
-            'min': np.min(latencies_us),
-            'max': np.max(latencies_us),
-            'std': np.std(latencies_us)
-        }
-        
-        # Print statistics
-        print("\nFalling→Rising Edge Latency Statistics (microseconds):")
-        print(f"Count: {stats['count']}")
-        print(f"Mean: {stats['mean']:.3f} µs")
-        print(f"Median: {stats['median']:.3f} µs")
-        print(f"Min: {stats['min']:.3f} µs")
-        print(f"Max: {stats['max']:.3f} µs")
-        print(f"Std Dev: {stats['std']:.3f} µs")
-        
-        # Sort latencies for CDF
-        sorted_latencies = np.sort(latencies_us)
-        
-        # Calculate the CDF (probability from 0 to 1 for each data point)
-        # For each value, what percentage of the data is less than or equal to it
-        cdf = np.arange(1, len(sorted_latencies) + 1) / len(sorted_latencies)
-        
-        # Plot the CDF
-        plt.plot(sorted_latencies, cdf, 'b-', linewidth=2)
-        
-        # Add a line for the mean
-        plt.axvline(x=stats['mean'], color='r', linestyle='--', 
-                    label=f"Mean: {stats['mean']:.3f} µs")
-        
-        # Add a line for the median
-        plt.axvline(x=stats['median'], color='g', linestyle='-.',
-                    label=f"Median: {stats['median']:.3f} µs")
-        
-        # Configure the plot
-        plt.grid(True, alpha=0.3)
-        plt.xlabel('Latency (microseconds)')
-        plt.ylabel('Cumulative Probability')
-        plt.title('Cumulative Distribution Function (CDF) of Falling→Rising Edge Latency')
-        plt.legend()
-        
-        # Create formatter for x-axis
-        formatter = ScalarFormatter(useOffset=False)
-        formatter.set_scientific(False)
-        plt.gca().xaxis.set_major_formatter(formatter)
-        
-        # Save the plot
-        output_file = Path(csv_file).stem + "_latency_cdf.png"
-        plt.savefig(output_file, dpi=300, bbox_inches='tight')
-        print(f"\nPlot saved as {output_file}")
-        
-        # Show the plot
-        plt.tight_layout()
-        plt.show()
-        
-        return True
-        
-    except Exception as e:
-        print(f"Error analyzing data: {e}")
-        return False
+### Sample Output Visualization
 
-if __name__ == "__main__":
-    # Get the CSV file from command-line arguments or use a default
-    if len(sys.argv) > 1:
-        csv_file = sys.argv[1]
-    else:
-        # Prompt user for file if not provided as argument
-        csv_file = input("Enter the path to the CSV file: ")
-    
-    # Run the analysis
-    analyze_edge_latency(csv_file)
-```
+Below is a sample output image showing the CDF of falling-to-rising edge latency:
+
+![Falling to Rising Edge Latency CDF](pwm_sleep_edges_loaded_latency_cdf.png)
+
+This visualization shows the distribution of latencies between falling and rising edges, with vertical lines indicating the mean (red dashed) and median (green dash-dotted) values.
 
 ---
 
 ## 💡 How to Use the Generated Script
 
-1. **Save the script** as a Python file (e.g., `analyze_latency.py`)
+1. **Save the script** as [`analyze_latency.py`](analyze_latency.py) (already provided in this directory)
 2. **Install required packages** if necessary:
    ```bash
    pip install pandas numpy matplotlib seaborn
    ```
 3. **Run the script** with your CSV file:
    ```bash
-   python analyze_latency.py path/to/your_data.csv
+   python analyze_latency.py pwm_sleep_edges_loaded.csv
    ```
 4. **Review the output** statistics and CDF plot to analyze signal latency
 
-The generated script provides a foundation that students can further customize for their specific analysis needs.
+The sample output will look similar to the image shown above. The script provides a foundation that students can further customize for their specific analysis needs.
 
 ---
 
