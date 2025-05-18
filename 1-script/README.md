@@ -7,52 +7,34 @@ Learn how to use AI (e.g., Claude, ChatGPT) to generate complete, functional scr
 ## 🎓 Pedagogical Framing
 
 - Courses very focused on in-depth topic requiring full attention
-    - e.g. [EECE4534](https://neu-ece-4534.github.io) for Linux Kernel Module development in context of advanced embedded sysems
 - Requires to hone in and focus on specific details of programming (kernel module development in C)
-- Course topic uncovers real-world problems: 
-    - Real-time quality of a generated PWM signal? 
-    - Directly impacted by the quality of code students write
+- Course topic uncovers real-world problems that require complex analysis and reasoning
 - Not enough time to also cover out of domain details 
-    - Real-time statistical analysis and visualization 
 - Opportunity: Prompt AI to generate auxiliary code
+    - Simulation code
+    - Data loaders, converters
+    - Visualizations
+    - Diagnostic utilities
 - Benefits:
     - Students can focus primary course objectives
     - Analyze and interpret results through generated code
     -> Experiential Learning in a larger context
 
-- Similar opportinities to generate:
-    - Simulation code
-    - Data loaders, converters
-    - Visualizations
-    - Diagnostic utilities
-
 ---
 
 ## 🔍 Example Scenario: Real-time Analysis
-
-- Students develop a kernel module for pulse-width modulation (PWM) signal generation 
+- [EECE4534](https://neu-ece-4534.github.io): Linux Kernel Module development (in C) in context of advanced embedded systems
+- Students develop a kernel module to genereate pulse-width modulation (PWM) signals 
 ![Pulse Width Modulation (PWM) signal example](https://neu-ece-4534.github.io/media/edgeutil.png)
-- To assess quality of the generated PWM signal, they need to analyze timing data from digital signals
-- Students need to capture and analyze, but should not be burdened with implementing the analysis code
-- We developed an in-line logic analyzer ([PulseCap](https://neu-ece-4534.github.io/pulsecap.html)) that captures the timing of rising and falling edges of digital signals
-
-### The Challenge:
-- Students have captured signal timing data in a comma-separated value (CSV) file:
-
-| **Column** | **Description**                                                       |
-|:----------:|:----------------------------------------------------------------------|
-|     1      | Sample Time                                                           |
-|     2      | Edge type (0 for RISING, 1 for FALLING)                               |
-|     3      | Duration since last edge of *same* type (e.g. RISING -\> RISING)      |
-|     4      | Duration since last edge of *opposite* type (e.g. FALLING -\> RISING) |
-
-
-- They need to plot the cumulative probability distribution (CDF) of latency between falling and rising edges
-- Being able to plot this using AI, allows me to go to next higher level of understanding of what impacts real-time quality: 
+- Quality and approach of developed code directly impacts quality of generated signal
+- Students need to capture and analyze to improve learning
+    - Should not be burdened with implementing the analysis code (e.g. in Python)
+- We already provide an in-situe logic analyzer ([PulseCap](https://neu-ece-4534.github.io/pulsecap.html)) that captures the timing of rising and falling edges
+- Allowing to generate visualization (auxillary) code allows raising to next level up fostereing understanding of what impacts real-time quality: 
   - Implementation method: busy loop, usleep, hardware timer
   - Scheduling: priority, real-time, best-effort
 - Empowers students to learn and reflect about their own code
-- Example by students from Spring 2024: 
+- Sample output from 1 lab group in Spring 2024 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; ">
 
 <div style="flex: 1; text-align: center;">
@@ -74,6 +56,20 @@ Learn how to use AI (e.g., Claude, ChatGPT) to generate complete, functional scr
 </div>
 
 </div>
+
+### The Auxillary Code Generation Challenge:
+
+- Given signal timing data in a comma-separated value (CSV) file:
+
+| **Column** | **Description**                                                       |
+|:----------:|:----------------------------------------------------------------------|
+|     1      | Sample Time                                                           |
+|     2      | Edge type (0 for RISING, 1 for FALLING)                               |
+|     3      | Duration since last edge of *same* type (e.g. RISING -\> RISING)      |
+|     4      | Duration since last edge of *opposite* type (e.g. FALLING -\> RISING) |
+
+
+- Students need to plot the cumulative probability distribution (CDF) of latency between edges
 
 ---
 
