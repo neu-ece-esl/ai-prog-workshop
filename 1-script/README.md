@@ -52,6 +52,28 @@ Learn how to use AI (e.g., Claude, ChatGPT) to generate complete, functional scr
   - Implementation method: busy loop, usleep, hardware timer
   - Scheduling: priority, real-time, best-effort
 - Empowers students to learn and reflect about their own code
+- Example by students from Spring 2024: 
+<div style="display: flex; justify-content: space-between; align-items: flex-start; ">
+
+<div style="flex: 1; text-align: center;">
+    <img src="period_busy.png" alt="Period Busy Loop" width="100%">
+    <br>
+    <sub><span style="font-size: 0.8em;"><b>(a) Busy Loop</b></span></sub>
+</div>
+
+<div style="flex: 1; text-align: center;">
+    <img src="period_sleep.png" alt="Period Sleep" width="100%">
+    <br>
+    <sub><span style="font-size: 0.8em;"><b>(b) OS Sleep</b></span></sub>
+</div>
+
+<div style="flex: 1; text-align: center;">
+    <img src="period_timer.png" alt="Period Timer" width="100%">
+    <br>
+    <sub><span style="font-size: 0.8em;"><b>(c) Hardware Timer</b></span></sub>
+</div>
+
+</div>
 
 ---
 
@@ -83,6 +105,11 @@ Upload the CSV file to your AI assistant.
 > Please include comments explaining the code and handle potential errors."
 
 ---
+
+## Sample Chat
+
+- [Claude Chat](https://claude.ai/artifacts/50104851-e385-4d9c-b0d0-7b4d39e2826f) read-only within Northeastern
+
 
 ## ✅ Sample Generated Script and Output
 
