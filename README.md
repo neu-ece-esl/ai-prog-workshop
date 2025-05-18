@@ -85,16 +85,16 @@ Up Next:
 
 ### 2. AI Programming Assistance and Pedagogy
 
-Participants are introduced to four levels of AI programming assistance, each increasing in complexity and integration:
-
-- **🔍 Code Review and Improvement**  
-  Using AI (e.g., ChatGPT) to analyze, debug, and enhance existing code. Focus is placed on explanation, feedback, and code quality improvement.
-
-- **🧠 Copilot Integration in VS Code**  
-  Demonstrating GitHub Copilot’s contextual code completion to help scaffold and extend student code with intent-driven prompts.
+Exploration of AI programming assistance through four examples, sorted by increasing in complexity and integration:
 
 - **⚙️ Auxiliary Code Generation**  
-  Using large language models (e.g., Claude) for one-shot generation of scripts—e.g., data loaders, visualizations, and diagnostic utilities.
+  One-shot generation of scripts beyond the course focus, e.g., data loaders, visualizations, and diagnostic utilities.
+
+- **🔍 Code Review and Improvement**  
+  Analyze, debug, and enhance existing code through help of AI. Focus is on explanation, feedback, and code quality improvement.
+
+- **🧠 Copilot Integration in VS Code**  
+  Contextual code completion using GitHub Copilot to help scaffold, expand and refactor code with intent-driven prompts.
 
 - **🧩 Agent Mode for Complex Projects**  
   Exploring how agentic AI systems can assist with larger, multi-file codebases. A live demonstration of a team-based project tool (e.g., user onboarding, team formation, collaboration chat) will illustrate the possibilities.
