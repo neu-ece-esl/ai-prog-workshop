@@ -124,14 +124,14 @@ Then:
 
 ### 4. Show & Tell / Reflection / Discussion
 
-Share your activity ideas with the group and reflect on your experience:
+- **Show & Tell**: some groups share their activity ideas, challenges and insights. 
+- **Reflection**: 
+  - Discuss how integrating AI could impact your students’ learning.
+  - Consider ways these tools might reshape your assignments and course design.
+  - Identify potential challenges in assessment, fairness, or over-reliance on AI.
+  - Explore opportunities to foster deeper student engagement and ownership.
+- **Open Floor Discussion**
 
-- Discuss how integrating AI could impact your students’ learning.
-- Consider ways these tools might reshape your assignments and course design.
-- Identify potential challenges in assessment, fairness, or over-reliance on AI.
-- Explore opportunities to foster deeper student engagement and ownership.
-
-Open the floor for questions, suggestions, and further discussion.
 
 **Opportunities for Continued Exploration**
 
