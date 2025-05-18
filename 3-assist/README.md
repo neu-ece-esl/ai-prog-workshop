@@ -30,7 +30,7 @@ In this activity, you'll explore how to use GitHub Copilot to support your stude
 
 ### 📊 Example Output: Cluster Visualization
 
-![Cluster Visualization](Media/Cluster.jpeg)
+![Cluster Visualization](Cluster.jpeg)
 
 This scatter plot shows the result of clustering customers based on their annual income and spending score using KMeans. A typical classroom activity might involve students analyzing or reproducing such results.
 
@@ -38,7 +38,7 @@ This scatter plot shows the result of clustering customers based on their annual
 
 ### 🤖 Copilot in Action
 
-![Copilot Demo](Media/copilot_intro.gif)
+![Copilot Demo](copilot_intro.gif)
 
 This GIF demonstrates how GitHub Copilot can autocomplete code when given a well-structured prompt. Students can use it to generate functions like:
 - `plot_cluster_distribution(df)`
