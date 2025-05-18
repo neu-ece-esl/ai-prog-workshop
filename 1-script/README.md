@@ -1,60 +1,70 @@
-# 🚀 Level 3: Auxiliary Code Generation with AI
+# 🚀 Level 1: Auxiliary Code Generation with AI
 
-### 🎯 Objective:
 Learn how to use AI (e.g., Claude, ChatGPT) to generate complete, functional scripts for specialized tasks such as data analysis, visualization, and processing. This activity demonstrates how AI can help students and educators tackle complex coding tasks that would otherwise require significant manual effort and domain expertise.
-
----
-
-## 🧠 Concept: One-shot Script Generation for Data Analysis
-
-In this activity, we explore how AI can be used to generate complete scripts for specific tasks, particularly data analysis and visualization. Instead of writing code from scratch, we focus on using AI to **transform requirements** into ready-to-use code that students can run, understand, and modify.
 
 ---
 
 ## 🎓 Pedagogical Framing
 
-The goal isn't to replace students' programming skills, but to:
+- Courses very focused on in-depth topic requiring full attention
+    - e.g. [EECE4534](https://neu-ece-4534.github.io) for Linux Kernel Module development in context of advanced embedded sysems
+- Requires to hone in and focus on specific details of programming (kernel module development in C)
+- Course topic uncovers real-world problems: 
+    - Real-time quality of a generated PWM signal? 
+    - Directly impacted by the quality of code students write
+- Not enough time to also cover out of domain details 
+    - Real-time statistical analysis and visualization 
+- Opportunity: Prompt AI to generate auxiliary code
+- Benefits:
+    - Students can focus primary course objectives
+    - Analyze and interpret results through generated code
+    -> Experiential Learning in a larger context
 
-- **Accelerate complex implementation tasks** so students can focus on higher-level concepts and analysis
-- Provide **practical examples of good coding practices** that students can learn from
-- Help students **bridge the gap** between theoretical understanding and practical implementation
-- Enable **more ambitious projects** that would be too time-consuming to code manually
-
-This approach promotes:
-- More time spent on analysis and interpretation rather than implementation details
-- Exposure to more advanced programming techniques than students might be ready to write themselves
-- A mindset of *focusing on the problem* rather than getting stuck on syntax
+- Similar opportinities to generate:
+    - Simulation code
+    - Data loaders, converters
+    - Visualizations
+    - Diagnostic utilities
 
 ---
 
-## 🔍 Example Scenario: Microprocessor Signal Analysis
+## 🔍 Example Scenario: Real-time Analysis
 
-In this example from a Microprocessor-based Design course, students need to analyze timing data from digital signals. The PulseCap module captures the timing of rising and falling edges, but students need to process and visualize this data to understand signal behavior.
+- Students develop a kernel module for pulse-width modulation (PWM) signal generation 
+![Pulse Width Modulation (PWM) signal example](https://neu-ece-4534.github.io/media/edgeutil.png)
+- To assess quality of the generated PWM signal, they need to analyze timing data from digital signals
+- Students need to capture and analyze, but should not be burdened with implementing the analysis code
+- We developed an in-line logic analyzer ([PulseCap](https://neu-ece-4534.github.io/pulsecap.html)) that captures the timing of rising and falling edges of digital signals
 
 ### The Challenge:
-- Students have captured signal timing data in a specialized format 
+- Students have captured signal timing data in a comma-separated value (CSV) file:
+
+| **Column** | **Description**                                                       |
+|:----------:|:----------------------------------------------------------------------|
+|     1      | Sample Time                                                           |
+|     2      | Edge type (0 for RISING, 1 for FALLING)                               |
+|     3      | Duration since last edge of *same* type (e.g. RISING -\> RISING)      |
+|     4      | Duration since last edge of *opposite* type (e.g. FALLING -\> RISING) |
+
+
 - They need to plot the cumulative probability distribution (CDF) of latency between falling and rising edges
-- The analysis requires statistical processing and professional-quality visualization
+- Being able to plot this using AI, allows me to go to next higher level of understanding of what impacts real-time quality: 
+  - Implementation method: busy loop, usleep, hardware timer
+  - Scheduling: priority, real-time, best-effort
+- Empowers students to learn and reflect about their own code
 
 ---
 
-## 📊 Input Data Format
-
-The input data is in CSV format with the following columns:
-1. Sample Time (in seconds)
-2. Edge type (0 for RISING, 1 for FALLING)
-3. Duration since last edge of same type (e.g., RISING → RISING)
-4. Duration since last edge of opposite type (e.g., FALLING → RISING)
-
-This data comes from the PulseCap kernel module used for capturing the timing of digital signals at 10ns accuracy.
-
----
 
 ## 🤖 Suggested AI Prompt
 
-To generate a script that can process and visualize this data, you can use the following prompt with an AI assistant (like Claude or ChatGPT):
+Upload the CSV file to your AI assistant. 
 
-> **Prompt:**
+> **Prompt (manually written):**
+> The saved file is a comma separated file with the format outlined in the table below. All time stamps and durations are in seconds.
+ Column Description 1 Sample Time 2 Edge type (0 for RISING, 1 for FALLING) 3 Duration since last edge of same type (e.g. RISING -> RISING) 4 Duration since last edge of opposite type (e.g. FALLING -> RISING). Plot cumulative probability of latency between falling and rising edge from this file.
+
+> **Prompt (generated by Sonet 3.7):**
 >
 > "I need a Python script to analyze timing data from digital signals. I have a CSV file with the following columns:
 > 1. Sample Time (in seconds)
@@ -74,11 +84,12 @@ To generate a script that can process and visualize this data, you can use the f
 
 ---
 
-## ✅ Sample Generated Script
+## ✅ Sample Generated Script and Output
 
-The AI-generated script is saved as [`analyze_latency.py`](analyze_latency.py) in this directory. The script reads CSV data files like [`pwm_sleep_edges_loaded.csv`](pwm_sleep_edges_loaded.csv), processes the edge timing information, and produces both statistical output and a visualization of the cumulative distribution function (CDF).
+- generated script: [`analyze_latency.py`](analyze_latency.py) 
+- input CSV file: [`pwm_sleep_edges_loaded.csv`](pwm_sleep_edges_loaded.csv)
+- output plot: [`pwm_sleep_edges_loaded_latency_cdf.png`](pwm_sleep_edges_loaded_latency_cdf.png)
 
-### Sample Output Visualization
 
 Below is a sample output image showing the CDF of falling-to-rising edge latency:
 
@@ -99,33 +110,16 @@ This visualization shows the distribution of latencies between falling and risin
    ```bash
    python analyze_latency.py pwm_sleep_edges_loaded.csv
    ```
-4. **Review the output** statistics and CDF plot to analyze signal latency
-
-The sample output will look similar to the image shown above. The script provides a foundation that students can further customize for their specific analysis needs.
 
 ---
 
-## 💬 Reflection Questions
+## 🧑‍🏫 Instructor Activity: Enhancing Experiential Learning through Auxillary Code Generation
 
-After using AI to generate this script, consider:
+Now that you've explored how AI tools can generate complete scripts for data analysis, (or simulation, or ...) consider how you might use this approach in your own teaching.
 
-- How would this script need to be modified for different timing characteristics?
-- What additional analyses might be valuable for understanding signal behavior?
-- How does having a working script impact your ability to focus on interpreting the results rather than implementation details?
-- What parts of the code would you have struggled to implement on your own?
-
----
-
-## 🧑‍🏫 Instructor Activity: Designing an AI-Supported Data Analysis Task
-
-Now that you've explored how AI tools can generate complete scripts for data analysis, consider how you might use this approach in your own teaching.
-
-### 🎓 Your Task:
-Design a **classroom activity** where students use an AI assistant to generate a script that processes and analyzes data relevant to your course.
-
-1. **Identify a data-heavy task** in your curriculum that typically requires extensive coding
+1. **Identify a task beyond your course scope** in your curriculum that typically requires extensive coding, but would enable students to focus on higher-level concepts connecting real-world challenges with their course scope.
 2. **Craft a detailed prompt** that would help an AI assistant generate a useful script
-3. **Consider how students will learn** from analyzing and potentially modifying the generated code
+3. **Consider how students will learn** from the enabled higher-level analysis/reasoning. 
 4. **Plan for assessment** that focuses on understanding and interpretation rather than implementation
 
-This approach allows students to engage with more complex analyses than might otherwise be possible, while still developing their understanding of programming concepts and practices.
+This approach allows students to engage with more complex analyses than might otherwise be possible, while still developing their understanding of programming concepts and practices core to the course.
