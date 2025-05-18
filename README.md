@@ -10,7 +10,7 @@ The *Navigating Programming Education in AI Age* is designed for instructors who
 
 By the end of this workshop, participants will:
 
-- Understand the evolving role of AI in programming education
+- Gain understanding of the evolving role of AI in programming education
 - Explore multiple levels of AI programming assistance, from code review to agent-based systems
 - Gain hands-on experience with AI tools in a programming context
 - Start the design of classroom activities that meaningfully integrate AI support
@@ -29,30 +29,59 @@ By the end of this workshop, participants will:
   - (Optional) Access to:
     - GitHub Copilot in VS Code
     - Claude (for script generation)
+- **Agenda:**
+  - 5 minutes: Overview of AI in programming education
+  - 15 minutes: Exploration of AI programming assistance levels
+  - 15 minutes: Hands-on activity design
+  - 15–20 minutes: Show & Tell / Reflection
 
 ---
 
-## 🧭 Workshop Structure
+### 1. Overview
 
-The workshop is divided into four sections, each combining technical exploration with pedagogical reflection.
+Increasing Abstraction Levels in Programming:
+ - always working toward higher levels of abstraction
+ - machine code, assembly, C/C++, Python, domain-specific languages (e.g. Faust for audio processing)
+ - higher abstractions allow to develop more complex systems with less code focusing on the design of the system rather than the implementation details
+ - With each abstraction level, developers were concerned about performance, and loss of control over the implementation details.
+ - But higher abstractions dominate as compiler/runtime systems get better 
+   - E.g. assembly only for utmost performance-critical code; allows using very specific-hardware features to eek out the last bit of performance (only where human is better than compiler/runtime)
+- With GenAI, natural language is a new abstraction level, allowing to specify what a program should do, rather than being restricted to the syntax of a programming language
 
----
+Paradigm Shift in Programming:  
+- GenAI becomes peer programmer (collaborator), not just a tool
+  - Helps generating simple scripts with a few sentences
+  - Reviews, analyzes and gives improvement suggestions for existing code
+  - Helping hand in code completion, repeating and expanding code patterns
+  - Junior developer that develops complete projects across multiple files and abstractions 
+- Libraries and APIs become more accessible (AI can generate project-specific code out of example snippets)
+- Single developer can span many more programming languages
 
+Limitations of GenAI:
+- GenAI is not a replacement for human programmers
+  - Can generate (complex) code, but it is driven by the creativity, intuition, experience and problem-solving skills of a human.
+  - Limited to what it abstracted from training data (unless self-supervised training is used)
 
-### 1. Overview and Philosophical Shift (5 minutes)
+Changing Role of a Programmer: 
+- Shift focus from **syntax and implementation** to **design, concept and intent**
+- From **individual contributor** to **project team lead** where AI is a **collaborative team member**
+- Still needs to understand the entire stack of code and technologies, to critically evaluate collorator's suggestions and spot fix where needed.
+  - Comparison with aircraft autopilot: 
+    - Autopilot helps tremendously with low level tasks, but pilot is still in control
+    - Pilot needs to understand the entire aircraft and its systems to be able to spot and fix issues
 
-This session introduces a pedagogical shift:
+AI cannot build your custom, novel, high-impact project for you. It can help to build it faster and with less effort. It can help to focus on the design of the system rather than being overwhealmed with implementation details all the time. 
 
-- From **programmer** to **project team lead**
-- From code-as-syntax to **code-as-design**
-- From individual problem-solving to **collaborative, intent-driven development**
-- From teaching "what the code does" to guiding "why the code should be"
+Question: How to guide students in programming education to become a technology leader, while still understanding the underlying technology details?
 
-Participants are encouraged to reframe programming education around design thinking, student agency, and meaningful AI collaboration.
+Up Next:
+- Overview: AI programming assistance examples with increasing complexity and integration 
+- Hands-on: design a classroom activity that integrates AI. 
+- Reflection: curriculum design, course assignment, evaluation, and student engagement
 
 --- 
 
-### 2. AI Programming Assistance and Pedagogy (15 minutes)
+### 2. AI Programming Assistance and Pedagogy
 
 Participants are introduced to four levels of AI programming assistance, each increasing in complexity and integration:
 
@@ -70,27 +99,28 @@ Participants are introduced to four levels of AI programming assistance, each in
 
 ---
 
-### 3. Hands-on Activity (15 minutes)
+### 3. Hands-on Activity
 
-Participants choose an AI assistance level—ideally one slightly above their current familiarity—and engage in:
+Choose an AI assistance level—preferably one that challenges you beyond your current experience. Then:
 
-- **Exploring a technology level**
-- **Designing a classroom activity** that integrates AI
-- **Using an AI assistant** to help build or test their design
-- **Refining in small groups** with optional support
-- **Preparing to share** with the wider group
+- **Explore your chosen technology level.**
+- **Design a classroom activity** that meaningfully integrates AI at this level.
+- **Leverage an AI assistant** to help build or test your activity design.
+- **Collaborate in small groups** to refine your ideas, with support available as needed.
+- **Prepare to share** your activity and insights with the larger group.
 
 ---
 
-### 4. Show & Tell / Reflection (15–20 minutes)
+### 4. Show & Tell / Reflection / Discussion
 
-Participants present their activity ideas and reflect on:
+Share your activity ideas with the group and reflect on your experience:
 
-- The impact of AI integration on student learning
-- How these tools might reshape assignments and course design
-- Challenges in assessment, fairness, or over-reliance
-- Opportunities for deeper student engagement and ownership
+- Discuss how integrating AI could impact your students’ learning.
+- Consider ways these tools might reshape your assignments and course design.
+- Identify potential challenges in assessment, fairness, or over-reliance on AI.
+- Explore opportunities to foster deeper student engagement and ownership.
 
+Open the floor for questions, suggestions, and further discussion.
 
 ---
 
