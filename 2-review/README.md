@@ -1,4 +1,4 @@
-# 🔍 Level 1: AI as a Code Review and Improvement Tool
+# 🔍 Level 2: AI as a Code Review and Improvement Tool
 
 ### 🎯 Objective:
 Learn how to use AI (e.g., ChatGPT) as a coach to review, debug, and improve existing code. This activity demonstrates how AI can support student learning through hint-driven feedback, error identification, and code optimization — without directly giving away the answer.

@@ -1,4 +1,4 @@
-# 🚀 Level 2: Copilot Integration for Code Completion
+# 🚀 Level 3: Copilot Integration for Code Completion
 
 ### 🎯 Objective:
 Explore how GitHub Copilot can support students during the coding process by suggesting context-aware completions, generating boilerplate code, and scaffolding code structures based on natural language prompts. This activity focuses on helping students engage more deeply with **design**, **testing**, and **debugging** by letting Copilot handle repetitive coding tasks.
