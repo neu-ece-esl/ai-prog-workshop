@@ -87,16 +87,16 @@ Up Next:
 
 Exploration of AI programming assistance through four examples, sorted by increasing in complexity and integration:
 
-- **⚙️ Auxiliary Code Generation**  
+- **⚙️ Auxiliary Code Generation** ([Details](1-script/README.md))
   One-shot generation of scripts beyond the course focus, e.g., data loaders, visualizations, and diagnostic utilities.
 
-- **🔍 Code Review and Improvement**  
+- **🔍 Code Review and Improvement** ([Details](2-review/README.md))
   Analyze, debug, and enhance existing code through help of AI. Focus is on explanation, feedback, and code quality improvement.
 
-- **🧠 Copilot Integration in VS Code**  
+- **🧠 Copilot Integration in VS Code** ([Details](3-assist/README.md))
   Contextual code completion using GitHub Copilot to help scaffold, expand and refactor code with intent-driven prompts.
 
-- **🧩 Agent Mode for Complex Projects**  
+- **🧩 Agent Mode for Complex Projects** ([Details](4-vibe/README.md))
   Exploring how agentic AI systems can assist with larger, multi-file codebases. A live demonstration of a team-based project tool (e.g., user onboarding, team formation, collaboration chat) will illustrate the possibilities.
 
 ---
@@ -141,25 +141,6 @@ Then:
   - Share observations, challenges, and new ideas
   - Community to support each other in programming education revolution
 - Next step: kick-off programming community meeting 
-
----
-
-## 📁 Repository Structure
-- [**AI_code_review.ipynb**](AI_code_review.ipynb)  
-  Activity notebook for code review and improvement using ChatGPT
-
-- [**level2_copilot.ipynb**](level2_copilot.ipynb)  
-  Activity notebook demonstrating GitHub Copilot code completion
-
-- [**Data/**](Data/)  
-  Example data and clustering workflows
-
-- [**Media/**](Media/)  
-  Images and GIFs for demonstration and instruction
-
-- [**AI for review templates/**](AI%20for%20review%20templates/)  
-  Instructor templates for adapting the AI code review activity
-
 
 ---
 
