@@ -57,14 +57,16 @@ Paradigm Shift in Programming:
 - Libraries and APIs become more accessible (AI can generate project-specific code out of example snippets)
 - Single developer can span many more programming languages
 
+
 Limitations of GenAI:
 - GenAI is not a replacement for human programmers
   - Can generate (complex) code, but it is driven by the creativity, intuition, experience and problem-solving skills of a human.
   - Limited to what it abstracted from training data (unless self-supervised training is used)
 
 Changing Role of a Programmer: 
-- Shift focus from **syntax and implementation** to **design, concept and intent**
+- Focus schifts from **syntax and implementation mechanics** to **design, clear vision and intent**
 - From **individual contributor** to **project team lead** where AI is a **collaborative team member**
+- Enables larger-scale, impactful projects through AI assistance
 - Still needs to understand the entire stack of code and technologies, to critically evaluate collorator's suggestions and spot fix where needed.
   - Comparison with aircraft autopilot: 
     - Autopilot helps tremendously with low level tasks, but pilot is still in control
@@ -101,13 +103,22 @@ Participants are introduced to four levels of AI programming assistance, each in
 
 ### 3. Hands-on Activity
 
-Choose an AI assistance level—preferably one that challenges you beyond your current experience. Then:
+Form groups 2 based on interest in AI assistance levels:
+  - Preferably select a level challenging you beyond your current experience
+  - Your team will be assigned a breakout room 
+
+Then:
 
 - **Explore your chosen technology level.**
-- **Design a classroom activity** that meaningfully integrates AI at this level.
-- **Leverage an AI assistant** to help build or test your activity design.
-- **Collaborate in small groups** to refine your ideas, with support available as needed.
+- **Design a classroom activity** that meaningfully integrates AI at this level. Drive your design by considering (time permitting):
+  - Expected outcomes/skills
+  - Expressiveness and Scalability of Assessment 
+  - Minimize anticipated challenges
+- **Leverage AI assistants** to build your activity.
 - **Prepare to share** your activity and insights with the larger group.
+
+- Time: 15 minutes
+- Starting point: [GitHub repository](https://github.com/neu-ece-esl/ai-prog-workshop) with example notebooks and templates.
 
 ---
 
@@ -121,6 +132,15 @@ Share your activity ideas with the group and reflect on your experience:
 - Explore opportunities to foster deeper student engagement and ownership.
 
 Open the floor for questions, suggestions, and further discussion.
+
+**Opportunities for Continued Exploration**
+
+- Too many ideas, too many changes to explore in one hour!
+- Launchpad for ongoing discussion and collaboration
+- Regular (e.g., bi-weekly) meetups?
+  - Share observations, challenges, and new ideas
+  - Community to support each other in programming education revolution
+- Next step: kick-off programming community meeting 
 
 ---
 
