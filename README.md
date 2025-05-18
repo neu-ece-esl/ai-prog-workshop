@@ -125,36 +125,21 @@ Open the floor for questions, suggestions, and further discussion.
 ---
 
 ## 📁 Repository Structure
+- [**AI_code_review.ipynb**](AI_code_review.ipynb)  
+  Activity notebook for code review and improvement using ChatGPT
 
-The repository contains all materials used and generated during the workshop, organized for clarity and reuse:
+- [**level2_copilot.ipynb**](level2_copilot.ipynb)  
+  Activity notebook demonstrating GitHub Copilot code completion
 
-```
-ai-prog-workshop/
-│
-├── AI_code_review.ipynb
-│ └─ Activity notebook for code review and improvement using ChatGPT
-│
-├── level2_copilot.ipynb
-│ └─ Activity notebook demonstrating GitHub Copilot code completion
-│
-├── Data/
-│ ├── KMeans_Clustering.ipynb
-│ ├── Mall_Customers.csv
-│ └─ Example data and clustering workflows used in activities
-│
-├── Media/
-│ ├── Cluster.jpeg
-│ ├── copilot_intro.gif
-│ └─ Images and GIFs for demonstration and instruction
-│
-├── AI for review templates/
-│ ├── Template#01.ipynb
-│ ├── Template#02.ipynb
-│ └─ Instructor templates for adapting the AI code review activity
-│
-├── README.md
-│ └─ You’re here — full overview of the workshop and materials
-```
+- [**Data/**](Data/)  
+  Example data and clustering workflows
+
+- [**Media/**](Media/)  
+  Images and GIFs for demonstration and instruction
+
+- [**AI for review templates/**](AI%20for%20review%20templates/)  
+  Instructor templates for adapting the AI code review activity
+
 
 ---
 
@@ -170,5 +155,5 @@ Let’s build a collaborative, forward-thinking community of educators who embra
 
 ## 🤝 Acknowledgments
 
-This workshop is created by Gunar Schirner, Fatema Nafa, and Muhammad Salman at Northeastern University. 
+This workshop is created by [Gunar Schirner](https://coe.northeastern.edu/people/schirner-gunar/), [Fatema Nafa](https://coe.northeastern.edu/people/nafa-fatema/), and Muhammad Salman at Northeastern University.
 Claude and other AI tools have been used in the process of ideation and drafting the workshop.
