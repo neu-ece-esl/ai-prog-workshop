@@ -87,16 +87,16 @@ Up Next:
 
 Exploration of AI programming assistance through four examples, sorted by increasing in complexity and integration:
 
-- **⚙️ Auxiliary Code Generation** ([Details](1-script/README.md))
+- **⚙️ Auxiliary Code Generation** ([Details](1-script))
   One-shot generation of scripts beyond the course focus, e.g., data loaders, visualizations, and diagnostic utilities.
 
-- **🔍 Code Review and Improvement** ([Details](2-review/README.md))
+- **🔍 Code Review and Improvement** ([Details](2-review))
   Analyze, debug, and enhance existing code through help of AI. Focus is on explanation, feedback, and code quality improvement.
 
-- **🧠 Copilot Integration in VS Code** ([Details](3-assist/README.md))
+- **🧠 Copilot Integration in VS Code** ([Details](3-assist))
   Contextual code completion using GitHub Copilot to help scaffold, expand and refactor code with intent-driven prompts.
 
-- **🧩 Agent Mode for Complex Projects** ([Details](4-vibe/README.md))
+- **🧩 Agent Mode for Complex Projects** ([Details](4-vibe))
   Exploring how agentic AI systems can assist with larger, multi-file codebases. A live demonstration of a team-based project tool (e.g., user onboarding, team formation, collaboration chat) will illustrate the possibilities.
 
 ---
