@@ -3,14 +3,29 @@
 Learn how to use GitHub Copilot Agent Mode in VS Code to tackle complex, multi-file projects that would normally be challenging in a classroom context. This activity demonstrates how AI agents can help students and educators manage sophisticated projects, improving learning outcomes while reducing implementation overhead.
 
 ---
+## 🧩 Vibe Coding Overview
+   - Focuses on rapid prototyping and collaborative iteration (with AI assistance)
+   - Prioritizes agile evolution of  user experience and system flow over low-level details.
+   - Enables quick project scaffolding and fast experimentation.
+   - Mainstream in Startups and Accelerators [Synergy Labs](https://www.synergylabs.co/blog/what-is-vibe-coding-your-2025-vibe-coding-guide), 
+   - [Y Combinator](https://www.ycombinator.com/blog/the-rise-of-vibe-coding/) :  
+      > "Vibe coding is about getting something working fast, iterating in real time, and letting the product’s feel guide development decisions rather than rigid specs."  
+   - 25% of YC’s current cohort have almost entirely AI-generated codebases [TechCrunch](https://techcrunch.com/2025/03/06/a-quarter-of-startups-in-ycs-current-cohort-have-codebases-that-are-almost-entirely-ai-generated/)
 
-## 🎓 Pedagogical Framing
+   
+   **References:**
+   - [Y Combinator: The Rise of Vibe Coding](https://www.ycombinator.com/blog/the-rise-of-vibe-coding/)
+   - [How AI is Changing Software Development](https://thenewstack.io/how-ai-is-changing-software-development/)
+   - [GitHub Copilot Agent Mode](https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/)
+   - [Top 10 Vibe Coding Tools](https://dev.to/therealmrmumba/top-10-vibe-coding-tools-that-feel-like-magic-in-2025-1md)
+   - My own reflection in [AI for Human Instructors blog](https://teams.microsoft.com/l/message/19:1e2758ec49174425841771cc691dacb6@thread.tacv2/1744383783456?tenantId=a8eec281-aaa3-4dae-ac9b-9a398b9215e7&groupId=b5f3c736-7e2d-4bef-9b54-650ae2086004&parentMessageId=1744383783456&teamName=COE%20Faculty&channelName=AI%20for%20Human%20Instructors&createdTime=1744383783456)
 
-- Complex projects require understanding multiple technologies and frameworks
-- Advanced courses often involve integrating multiple components into a cohesive system
-- Students need to focus on core learning objectives rather than implementation details
-- Not enough time in a course to master every technology involved in modern applications
-- Opportunity: Use Agent Mode for project development
+
+## 🎓 Pedagogical Framing: Agent Mode for Complex Projects
+
+- Experiential learning is key, often involving hands-on final class projects
+- Class projects very time constrained (4-6 weeks) which limits scope
+- Opportunity: increase experiential impact by using Agent Mode for project development
     - Multi-file, multi-framework projects
     - Complex integration challenges
     - Cross-cutting concerns (authentication, persistence, etc.)
