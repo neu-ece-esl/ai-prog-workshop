@@ -60,8 +60,8 @@ Learn how to use GitHub Copilot Agent Mode in VS Code to tackle complex, multi-f
 - Generated ... noticed selections persist across restarts 
   > The application seems to remember state in between server sessions. If I start a new server, the results from the previous session are still there. How is persistent storage realized in this application across server restarts?
 - Data stored in JSON file. 
-  > Generate a Makefile to start, stop and clean the server.
-- Done 
+  > Can you create a makefile to start the server (make start), and to clean the database upon demand (with make clean)
+- Generated ... done. 
 - Detailed [Chat](Chat.md) with the AI agent
 
 ---
