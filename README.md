@@ -30,11 +30,11 @@ By the end of this workshop, participants will:
     - GitHub Copilot in VS Code
     - Claude (for script generation)
 - **Agenda:**
-  - 5 minutes: Overview of AI in programming education
-  - 15 minutes: Exploration of AI programming assistance levels
-  - 15 minutes: Hands-on activity design
-  - 15–20 minutes: Show & Tell / Reflection
-
+  - Overview of AI in programming education [10 minutes]
+  - Exploration of AI programming assistance levels [15 minutes]
+  - Hands-on activity design [20 minutes]
+  - Show & Tell / Discussion [15 minutes]
+    
 ---
 
 ### 1. Overview
