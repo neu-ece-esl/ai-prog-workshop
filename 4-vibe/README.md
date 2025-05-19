@@ -11,12 +11,16 @@ Learn how to use GitHub Copilot Agent Mode in VS Code to tackle complex, multi-f
    - [Y Combinator](https://www.ycombinator.com/blog/the-rise-of-vibe-coding/) :  
       > "Vibe coding is about getting something working fast, iterating in real time, and letting the product’s feel guide development decisions rather than rigid specs."  
    - 25% of YC’s current cohort have almost entirely AI-generated codebases [TechCrunch](https://techcrunch.com/2025/03/06/a-quarter-of-startups-in-ycs-current-cohort-have-codebases-that-are-almost-entirely-ai-generated/)
+   - BUT: Don't over-rely on AI.
+      - Joke in Silicon Valley TV Show: "get rid of all bugs" and AI deleted all SW: 
+      > "The most efficient way to get rid of all the bugs was to get rid of all the software which is technically and statistically correct"
 
    
    **References:**
    - [Y Combinator: The Rise of Vibe Coding](https://www.ycombinator.com/blog/the-rise-of-vibe-coding/)
    - [How AI is Changing Software Development](https://thenewstack.io/how-ai-is-changing-software-development/)
    - [GitHub Copilot Agent Mode](https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/)
+   - [Claude Code](https://www.anthropic.com/index/claude-code) and [Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
    - [Top 10 Vibe Coding Tools](https://dev.to/therealmrmumba/top-10-vibe-coding-tools-that-feel-like-magic-in-2025-1md)
    - My own reflection in [AI for Human Instructors blog](https://teams.microsoft.com/l/message/19:1e2758ec49174425841771cc691dacb6@thread.tacv2/1744383783456?tenantId=a8eec281-aaa3-4dae-ac9b-9a398b9215e7&groupId=b5f3c736-7e2d-4bef-9b54-650ae2086004&parentMessageId=1744383783456&teamName=COE%20Faculty&channelName=AI%20for%20Human%20Instructors&createdTime=1744383783456)
 
@@ -32,7 +36,7 @@ Learn how to use GitHub Copilot Agent Mode in VS Code to tackle complex, multi-f
     - More experiential learning in shorter timeframe
 - Challenge: 
    - Students still need to understand the entire stack of code and technologies to critically evaluate collaborator's suggestions and spot fix where needed.
-   - Large volumne of generated code becomes overwhelming
+   - Large volume of generated code becomes overwhelming
 - Example: Grad course [High-level Design of HW/SW Systems](https://neu-ece-7368.github.io/)
    - Accelerate AI inference with GEMM Accelerator 
    - SoC and custom hardware simulation (focus HW/SW architecture) [Overview](https://neu-ece-7368.github.io/SystemCCosimulation.html)
@@ -44,14 +48,21 @@ Learn how to use GitHub Copilot Agent Mode in VS Code to tackle complex, multi-f
 
 - Organizing workshop participants into groups based on their interests
 - Developing a new Web application too hard to do in a short time, generate?
-- My Prompt for GitHub Copilot Agent Mode:
+- My Prompt for GitHub Copilot in VS Code in Agent Mode (Sonet 3.7):
   > Generate a web page to which session participants can login (just by name no authentication required). After logging in, each participant needs to select from one of the following interests:
       - Code Improvement and Teaching
       - Code Assistance with CoPilot
       - Script Generation
       - Agent Mode for Projects
     A coordinator (username admin) finishes the first phase (after all participants have logged in). Then participants are paired together based on interests into teams (Teams get named team-1, team-2 ...). Each team should contain 2-2 members. The participants should get their team name and team members displayed once the decision is done. Optionally, members in the tam should be able to chat with each other
-- [Chat](Chat.md) with the AI agent
+- Generated ... webpage works, but team assignment not communicated to participants
+  > The website worked and participants could login and state interests. However, once the admin selected "form teams" it gets the message "teams successfully formed" but the participants still see the status "waiting for team forming".
+- Generated ... noticed selections persist across restarts 
+  > The application seems to remember state in between server sessions. If I start a new server, the results from the previous session are still there. How is persistent storage realized in this application across server restarts?
+- Data stored in JSON file. 
+  > Generate a Makefile to start, stop and clean the server.
+- Done 
+- Detailed [Chat](Chat.md) with the AI agent
 
 ---
 
