@@ -26,162 +26,32 @@ Learn how to use GitHub Copilot Agent Mode in VS Code to tackle complex, multi-f
 - Experiential learning is key, often involving hands-on final class projects
 - Class projects very time constrained (4-6 weeks) which limits scope
 - Opportunity: increase experiential impact by using Agent Mode for project development
-    - Multi-file, multi-framework projects
-    - Complex integration challenges
-    - Cross-cutting concerns (authentication, persistence, etc.)
-    - Full-stack applications
 - Benefits:
     - Students can focus on system architecture and design principles
     - Tackle more ambitious projects that demonstrate real-world scenarios
-    - Learn about integration patterns through guided implementation
-    -> Deep Learning through Complex Project Experiences
+    - More experiential learning in shorter timeframe
+- Challenge: 
+   - Students still need to understand the entire stack of code and technologies to critically evaluate collaborator's suggestions and spot fix where needed.
+   - Large volumne of generated code becomes overwhelming
+- Example: Grad course [High-level Design of HW/SW Systems](https://neu-ece-7368.github.io/)
+   - Accelerate AI inference with GEMM Accelerator 
+   - SoC and custom hardware simulation (focus HW/SW architecture) [Overview](https://neu-ece-7368.github.io/SystemCCosimulation.html)
+   - Fall 2024 free to use any AI, but none did (yet) -- too complex?
 
 ---
 
-## 🔍 Example Scenario: Group Organization Tool
-- Advanced web development concepts in a classroom setting
-- Students need to understand full-stack development principles
-- Complex technologies (React, Express, WebSockets, databases) would normally take weeks to master
-- Course should focus on system architecture rather than syntax details
+## 🔍 Example: Group Organization Tool
 
-### The Challenge:
-Create a web application that:
-- Allows participants to log in with just their name
-- Lets users select from predefined interest areas
-- Enables an admin to finalize group formation
-- Automatically pairs participants based on shared interests
-- Displays team assignments to all participants
-- Provides a simple team chat functionality
-
-This complex, multi-file project would typically require:
-- Frontend UI development
-- Backend API implementation
-- Real-time communication (WebSockets)
-- State management across components
-- Database design and integration
-
-![GitHub Copilot Agent Mode](https://github.blog/wp-content/uploads/2024/05/GHC-AgentMode-Embedded-Example.gif?resize=1200%2C630)
-
----
-
-## 🤖 Suggested AI Prompt
-
-> **Prompt for GitHub Copilot Agent Mode:**
->
-> "I want to create a full-stack web application for organizing workshop participants into groups based on their interests. The application needs to:
->
-> 1. Have a simple login screen (no authentication required, just entering a name)
-> 2. Allow users to select one interest from a predefined list:
->    - Code Improvement and Teaching
->    - Code Assistance with CoPilot
->    - Script Generation
->    - Agent Mode for Projects
-> 3. Include an admin view (accessed with username 'admin') that can trigger the group formation process
-> 4. Automatically pair participants into teams of 2-2 members with the same interests
-> 5. Display team assignments to all participants once groups are formed
-> 6. Provide a basic chat functionality for team members
->
-> Please guide me through creating this application, explaining the architecture, creating the necessary files, and implementing each component step by step. I'd like to use React for the frontend and Node.js/Express for the backend with a simple JSON-based storage solution."
-
----
-
-## 💻 Implementation Approach with Agent Mode
-
-GitHub Copilot Agent Mode can assist in tackling this complex project by:
-
-1. **Project Architecture Design**
-   - Planning the component structure
-   - Recommending technology choices
-   - Designing data models
-
-2. **Scaffold Project Structure**
-   - Creating necessary directories
-   - Setting up package configuration
-   - Initializing Git repository
-
-3. **Implementation Guidance**
-   - Writing React components for UI
-   - Developing Express API endpoints
-   - Implementing WebSocket for real-time communication
-   - Creating state management logic
-
-4. **Interactive Problem Solving**
-   - Debugging implementation issues
-   - Refining functionality based on requirements
-   - Suggesting improvements and alternatives
-
-5. **Testing and Deployment Assistance**
-   - Creating test cases
-   - Setting up development environment
-   - Preparing for deployment
-
----
-
-## ✅ Project Structure Overview
-
-The Agent Mode would help develop a project with this structure:
-
-```
-group-organizer/
-├── client/                 # Frontend React application
-│   ├── public/
-│   └── src/
-│       ├── components/     # UI components
-│       │   ├── Login.js
-│       │   ├── InterestSelection.js
-│       │   ├── AdminPanel.js
-│       │   ├── TeamDisplay.js
-│       │   └── Chat.js
-│       ├── contexts/       # State management
-│       ├── App.js
-│       └── index.js
-├── server/                 # Backend Express application
-│   ├── models/             # Data models
-│   ├── routes/             # API endpoints
-│   ├── socket/             # WebSocket handlers
-│   └── index.js
-└── package.json
-```
-
-## 🖥️ Key Implementation Features
-
-The project would include these components (all created with Agent Mode guidance):
-
-### Frontend Components
-- **Login Screen**: Simple form for name entry
-- **Interest Selection**: Dropdown or radio buttons for interest selection
-- **Admin Panel**: Controls for the admin to manage the group formation process
-- **Team Display**: Shows assigned teams after formation
-- **Chat Interface**: Simple messaging UI for team communication
-
-### Backend Services
-- **User Management API**: Endpoints for user registration and interest selection
-- **Group Formation Logic**: Algorithm to pair participants based on interests
-- **WebSocket Server**: Real-time updates and chat functionality
-- **Data Persistence**: Simple JSON-based storage for user and group data
-
-### Sample Screenshots
-- Login Screen
-- Interest Selection View
-- Admin Control Panel
-- Team Assignment Display
-- Chat Interface
-
----
-
-## 💡 Educational Benefits
-
-This Agent Mode approach offers several benefits:
-
-1. **Focus on Core Concepts**: Students can concentrate on understanding system architecture and component integration rather than syntax details.
-
-2. **Accelerated Development**: Complex projects become manageable within course timeframes.
-
-3. **Guided Learning**: Agent provides explanations and rationales for implementation choices.
-
-4. **Iterative Improvement**: Students can rapidly prototype, test, and refine their applications.
-
-5. **Real-World Scale**: Projects can more closely match real-world applications in complexity and scope.
+- Organizing workshop participants into groups based on their interests
+- Developing a new Web application too hard to do in a short time, generate?
+- My Prompt for GitHub Copilot Agent Mode:
+  > Generate a web page to which session participants can login (just by name no authentication required). After logging in, each participant needs to select from one of the following interests:
+      - Code Improvement and Teaching
+      - Code Assistance with CoPilot
+      - Script Generation
+      - Agent Mode for Projects
+    A coordinator (username admin) finishes the first phase (after all participants have logged in). Then participants are paired together based on interests into teams (Teams get named team-1, team-2 ...). Each team should contain 2-2 members. The participants should get their team name and team members displayed once the decision is done. Optionally, members in the tam should be able to chat with each other
+- [Chat](Chat.md) with the AI agent
 
 ---
 
