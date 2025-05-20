@@ -14,6 +14,7 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{standalone}
 \usepackage{tikz}
+\usepackage{wrapfig}
 \usetikzlibrary{shapes.geometric,positioning,arrows.meta}
 \graphicspath{{media}, {images}}
 \input{beamersetup}
@@ -221,94 +222,124 @@
 
 \section{Level 1: Auxiliary Code Generation}
 
-\begin{frame}{Auxiliary Code Generation: Concept}
-  \begin{itemize}
-    \item Using AI (Claude, ChatGPT) to generate complete, functional scripts
-    \item Applications: data analysis, visualization, processing
-    \item Helps tackle complex coding tasks that require significant manual effort
-    \item Especially useful for tasks outside the main course focus
-  \end{itemize}
+\begin{frame}{Auxiliary Code Generation: Overview}
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+      \only<1->{\textbf{Pedagogical Need}
+      \begin{itemize}\small
+        \item Courses focus on in-depth topics requiring full attention
+        \item Real-world problems require complex analysis
+        \item Not enough time for out-of-domain details
+        \item Opportunity to generate:
+          \begin{itemize}\footnotesize
+            \item Simulation code
+            \item Data loaders
+            \item Visualizations
+            \item Diagnostic utilities
+          \end{itemize}
+      \end{itemize}}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \only<2->{\textbf{Technology Solution}
+      \begin{itemize}\small
+        \item Using AI (Claude, ChatGPT) to generate complete scripts
+        \item Applications:
+          \begin{itemize}\footnotesize
+            \item Data analysis
+            \item Visualization
+            \item Processing
+          \end{itemize}
+        \item Tackles complex coding tasks
+        \item Useful for tasks outside course focus
+      \end{itemize}}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \only<3->{\textbf{Benefits to Students}
+      \begin{itemize}\small
+        \item Focus on primary course objectives
+        \item Analyze and interpret results
+        \item Gain experiential learning in larger context
+        \item Reduce cognitive load
+        \item More time for higher-order thinking
+      \end{itemize}}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Pedagogical Framing: Auxiliary Code}
-  \begin{itemize}
-    \item Courses focus on in-depth topics requiring full attention
-    \item Real-world problems often require complex analysis and reasoning
-    \item Not enough time to cover out-of-domain details
-    \item Opportunity: Prompt AI to generate auxiliary code for:
+\begin{frame}{Level 1 Example: Real-time Analysis}
+  \begin{columns}[T]
+    \begin{column}{0.6\textwidth}
       \begin{itemize}
-        \item Simulation code
-        \item Data loaders, converters
-        \item Visualizations
-        \item Diagnostic utilities
+        \item \href{https://neu-ece-4534.github.io}{EECE4534}: Linux Kernel Module development (in C)
+        \item Task: develop kernel module to generate PWM signals
+        \begin{itemize}
+          \item Code quality directly impacts signal quality
+        \end{itemize}
+        \item Experiential Learning: capture,  analyze, reflect
+        \item TA already implemented \href{https://neu-ece-4534.github.io/pulsecap.html}{in-situ logic analyzer} producing a text file with timestamps
+        \item Challenge: instructor insists on using cumulative distribution function (CDF) to analyze latencies  
       \end{itemize}
-  \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.35\textwidth}
+      \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/presentation/images/edgeutil.png}
+      \tiny\centerline{PWM signal}
+    \end{column}
+  \end{columns}
+
+  \begin{alertbox}
+    \begin{itemize}
+      \item Students already overwhealmed with kernel module development
+      \item Cannot ask to also write analysis code on top of everyting else
+    \end{itemize}
+  \end{alertbox}
 \end{frame}
 
-\begin{frame}{Benefits of Auxiliary Code Generation}
-  \begin{itemize}
-    \item Students can focus on primary course objectives
-    \item Analyze and interpret results through generated code
-    \item Enables experiential learning in a larger context
-    \item Reduces cognitive load from secondary implementation details
-    \item More time for higher-order thinking and analysis
-  \end{itemize}
+\begin{frame}[fragile]{Level 1 Example: Prompt and Output}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \begin{codeboxtc}{text}{AI Prompt (Shortened)}{}{}
+The saved file is a comma separated file with the format outlined in the table below. All time stamps and durations are in seconds. Column Description 1 Sample Time 2 Edge type (0 for RISING, 1 for FALLING) 3 Duration since last edge of same type (e.g. RISING -> RISING) 4 Duration since last edge of opposite type (e.g. FALLING -> RISING). Plot cumulative probability of latency between falling and rising edge from this file.      \end{codeboxtc}
+    \end{column}
+    
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+        \item Generated: CSV read (\texttt{pandas}), CDF calculation (\texttt{numpy}), plot and save (\texttt{matplotlib})
+        \item 110 lines of \href{https://github.com/neu-ece-esl/ai-prog-workshop/blob/main/1-script/analyze_latency.py}{Python Code}
+      \end{itemize}
+      \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/pwm_sleep_edges_loaded_latency_cdf.png}
+      \small\centerline{CDF of PWM Signal Latencies}
+      
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Example Scenario: Real-time Analysis}
-  \begin{itemize}
-    \item EECE4534: Linux Kernel Module development (in C)
-    \item Students develop kernel module to generate PWM signals
-    \item Code quality directly impacts signal quality
-    \item Students need to capture and analyze to improve learning
-    \item Shouldn't be burdened with implementing analysis code
-  \end{itemize}
+\begin{frame}{Level 1: Student Experience (Spring 2024)} 
+    \begin{itemize}
+        \item Excellent high-level discussion about real-time quality impact of
+        \begin{itemize}
+            \item Implementation method: busy loop, usleep, hardware timer
+            \item Scheduling policy and priority 
+            \item System load 
+        \end{itemize}
+    \end{itemize}
+    \begin{columns}
+        \column{0.33\textwidth}
+        \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_busy.png}
+        \tiny\centering (a) Busy Loop
+        
+        \column{0.33\textwidth}
+        \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_sleep.png}
+        \tiny\centering (b) OS Sleep
+        
+        \column{0.33\textwidth}
+        \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_timer.png}
+        \tiny\centering (c) Hardware Timer
+    \end{columns}
 \end{frame}
 
-\begin{frame}{Pulse Width Modulation Example}
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_timer.png}
-  \end{center}
-  \begin{itemize}
-    \item Hardware Timer implementation of PWM signal
-    \item Empowers students to learn about their own code's performance
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Sample AI Prompt for Code Generation (1/2)}
-  \begin{codeboxtc}{text}{Generated by Sonet 3.7}{}{}
-"I need a Python script to analyze timing data from digital signals. I have a CSV file with the following columns:
-1. Sample Time (in seconds)
-2. Edge type (0 for RISING, 1 for FALLING)
-3. Duration since last edge of same type (seconds)
-4. Duration since last edge of opposite type (seconds)
-
-Please write a script that:
-1. Reads the CSV file
-2. Extracts the latency between falling and rising edges (column 4 when edge type is 0/RISING)
-  \end{codeboxtc}
-\end{frame}
-
-\begin{frame}[fragile]{Sample AI Prompt for Code Generation (2/2)}
-  \begin{codeboxtc}{text}{Generated by Sonet 3.7}{}{}
-3. Calculates and plots the cumulative probability distribution (CDF) of this latency
-4. Adds appropriate labels, title, and grid to the plot
-5. Displays some basic statistics (mean, median, min, max, standard deviation)
-6. Saves the plot as a PNG file
-
-Please include comments explaining the code and handle potential errors."
-  \end{codeboxtc}
-\end{frame}
-
-\begin{frame}{Sample Output: CDF Visualization}
-  \begin{center}
-    \includegraphics[width=0.7\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/pwm_sleep_edges_loaded_latency_cdf.png}
-  \end{center}
-  \begin{itemize}
-    \item Shows distribution of latencies between falling and rising edges
-    \item Mean (red dashed) and median (green dash-dotted) values indicated
-  \end{itemize}
-\end{frame}
 
 \begin{frame}{Instructor Activity: Auxiliary Code Generation}
   Consider how you might use this approach in your teaching:
