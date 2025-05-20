@@ -10,6 +10,7 @@
 \usepackage{subcaption}
 \usepackage{cancel}
 \usepackage{algorithm}
+\usepackage{hyperref}
 \usepackage[noend]{algpseudocode}
 \usepackage{standalone}
 \usepackage{tikz}
@@ -139,18 +140,34 @@
 
 
 \begin{frame}{Paradigm Shift in Programming}
-  \begin{itemize}
-    \item GenAI becomes peer programmer (collaborator), not just a tool
-    \item Helps with:
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
       \begin{itemize}
-        \item Generating simple scripts with a few sentences
-        \item Reviewing, analyzing, and suggesting improvements
-        \item Code completion, repeating, and expanding code patterns
-        \item Developing complete projects across multiple files
+        \item GenAI becomes peer programmer (collaborator), not just a tool
+        \item Helps with:
+          \begin{itemize}
+            \item Generating simple scripts with a few sentences
+            \item Reviewing, analyzing, and suggesting improvements
+            \item Code completion, repeating, and expanding code patterns
+            \item Developing complete projects across multiple files
+          \end{itemize}
+        \item Libraries and APIs become more accessible
+        \item Single developer can span many more programming languages
       \end{itemize}
-    \item Libraries and APIs become more accessible
-    \item Single developer can span many more programming languages
-  \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.4\textwidth}
+      % Add the image manually:
+      % 1. Download the image from: https://www.vecteezy.com/vector-art/3216651-ai-artificial-intelligence-robot-team-developer-programmer
+      % 2. Save it as "ai_robot_team_developer.jpg" in the images directory
+      % 3. Uncomment the line below:
+      \includegraphics[width=\textwidth]{images/376_generated.jpg}
+      
+      \vspace{0.1cm}
+      \tiny\centerline{Image: "AI Robot Team Developer" by Vecteezy}
+      \tiny\centerline{\url{www.vecteezy.com/vector-art/3216651}}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Limitations of GenAI}
