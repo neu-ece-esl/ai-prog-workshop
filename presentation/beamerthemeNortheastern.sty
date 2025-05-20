@@ -1,0 +1,96 @@
+% copied from Boadilla theme and modified
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\usecolortheme{rose}
+\useinnertheme[shadow]{rounded}
+\usecolortheme{dolphin}
+
+\setbeamercolor*{author in head/foot}{parent=palette tertiary}
+\setbeamercolor*{title in head/foot}{parent=palette secondary}
+\setbeamercolor*{date in head/foot}{parent=palette primary}
+
+\setbeamercolor*{section in head/foot}{parent=palette tertiary}
+\setbeamercolor*{subsection in head/foot}{parent=palette primary}
+
+\setbeamertemplate{page number in head/foot}[totalframenumber]%
+
+\setbeamertemplate{sections/subsections in toc}[circle]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamersize{text margin left=3mm,text margin right=3mm}
+\setbeamerfont{author}{size=\large, series=\bfseries}
+\setbeamerfont{titlelike}{series=\bfseries, family=\rmfamily}
+\setbeamerfont{title}{size=\Large, series=\bfseries, family=\rmfamily}
+
+\setbeamercolor{structure}{fg=NURed}
+
+\defbeamertemplate*{footline}{infolines theme}
+{%
+  \leavevmode%
+  \hbox{%
+    \begin{tikzpicture}[footer text/.style={text=black, inner sep=0pt, outer
+        sep=0pt, minimum height=10pt}]
+      \draw[NURed, fill=NURed] (0.05\paperwidth,12.5pt) -- (\paperwidth, 12.5pt) --
+      (\paperwidth, 15pt) -- (0.05\paperwidth,15pt) -- cycle;
+      % preserve footer size by drawing invisible bar
+      \path (0,0) -- (\textwidth, 0) -- (\textwidth, 12.5pt) -- (0, 12.5pt)
+      -- cycle;
+      % insert text
+      \node [anchor=south west, footer text] at (0.05\paperwidth, 2.5pt) {\footername};
+      \node [anchor=south east, footer text] at (0.95\paperwidth, 2.5pt) {\insertshortauthor};
+      \node at (0.975\paperwidth, 2.5pt) [anchor=south east, footer text] {\bfseries\insertframenumber};
+      \node at (0.5\paperwidth, 2.5pt) [anchor=south, footer text] {\insertslidenavigationsymbol\insertframenavigationsymbol\insertsubsectionnavigationsymbol\insertsectionnavigationsymbol};
+    \end{tikzpicture}%
+  }
+  \vskip0pt%
+}
+
+\defbeamertemplate*{frametitle}{infolines theme}
+{%
+  \setbeamercolor{frametitleline}{bg=NURed}
+  \leavevmode%
+  \hbox{%
+    % Can't find any other way, deducting margin size here
+    \hskip-\beamer@leftmargin
+  \begin{tikzpicture}
+      \draw[NURed, fill=NURed] (0, 0) -- (0.95\paperwidth, 0) --
+      (0.95\paperwidth, 2.5pt) -- (0, 2.5pt) -- cycle;
+      % preserve header size by drawing invisible bar
+      \path (0,5pt) -- (\paperwidth, 5pt) -- (\paperwidth, 25pt) -- (0, 25pt)
+      -- cycle;
+      \node at (0.05\paperwidth, 5pt) [anchor=south west, minimum height=20pt,
+      inner sep=0pt, outer sep=0pt] {\usebeamerfont{titlelike}\insertframetitle};
+      % \node at (0.075\paperwidth, 2.5pt) [anchor=south west, minimum height=10pt,
+      % inner sep=0pt, outer sep=0pt] {\usebeamerfont{framesubtitle}\insertframesubtitle};
+    \end{tikzpicture}
+    }
+}
+\defbeamertemplate*{headline}{infolines theme}{}
+\defbeamertemplate*{navigation symbols}{infolines theme}{}
+\defbeamertemplate*{title page}{infolines theme}{
+  \centering
+  \vspace{1em}
+  {\parbox{0.8\paperwidth}{\centering\usebeamerfont{title}\usebeamercolor[fg]{structure}\inserttitle}}\\
+  \vspace{2em}
+  {\usebeamerfont{author}\insertauthor}\\
+  \vspace{2em}
+  \insertinstitute\\
+  \vspace{1em}
+  \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+}
+
+\usesubitemizeitemtemplate{%
+  \tiny\raise1.5pt\hbox{\color{beamerstructure}$\blacktriangleright$}%
+}
+\usesubsubitemizeitemtemplate{%
+  \tiny\raise1.5pt\hbox{\color{beamerstructure}$\bigstar$}%
+}
+
+\mode
+<all>
