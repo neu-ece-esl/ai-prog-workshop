@@ -1,0 +1,171 @@
+\documentclass[xcolor={dvipsnames}, aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usetheme{Northeastern}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{cancel}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{standalone}
+\input{beamersetup}
+\graphicspath{{media}, {images}}
+\titlegraphic{\includegraphics[width=0.4\paperwidth]{northeastern}}
+
+\title{Full Presentation Title}
+\author{Author Name}
+\institute{Embedded Systems Laboratory (ESL)\\
+  Electrical And Computer Engineering\\
+  Northeastern University\\
+  Boston MA, USA}
+\newcommand{\footername}{Short Presentation Title}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents[part=1]
+  \tableofcontents[hideallsubsections, part=2]
+  \tableofcontents[hideallsubsections, part=3]
+  \tableofcontents[hideallsubsections, part=4]
+  \tableofcontents[hideallsubsections, part=5]
+\end{frame}
+
+\part[Introduction]{Introduction}
+\section{Introduction}
+
+\part[Code]{Displaying Code}
+\section{Displaying Code}
+\begin{frame}[fragile]{Displaying Code}
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \begin{itemize}
+    \item<1-> Code syntax highlighting provided by \texttt{minted} package
+    \item<1-> You'll need to have \texttt{pygments} installed to highlight
+    \item<2-> To highlight, use \texttt{minted} environment
+    \item<2-> Use \mintinline{latex}{[fragile]} option in frame
+    \item<2-> Don't put \texttt{minted} inside \texttt{invisible}, use code
+      boxes (later)
+    \item<3-> Display inline code with
+      \mintinline{latex}{\mintinline{language}{some code}}:
+      \mintinline{python}{l = [x for x in range(0, 9)]} (python)
+    \end{itemize}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\textwidth}
+    \colorheading{Python:}
+    \begin{minted}[autogobble]{python}
+      def hello():
+        print('Hello World!')
+    \end{minted}
+    \colorheading{C++:}
+    \begin{minted}[autogobble]{cpp}
+      using namespace std;
+      int main(void) {
+        cout << "Hello World!" << endl;
+        return 0;
+      }
+    \end{minted}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Code in boxes}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{itemize}
+      \item<1-> Display code inside boxes uses \texttt{tcolorbox} and
+        \texttt{minted} together
+      \item<1-> Beware that using \texttt{codeboxtc} still will break with \texttt{
+          invisible, only
+        }
+      \item<2-> For finer control, use \texttt{BeamerShowCode}
+      \item<3-> Highlight code lines
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.5\textwidth}
+    \begin{center}
+    \begin{codeboxtc}{python}{Example Python Code}{}{}
+      class MyClass:
+        def __init__(self):
+          raise RuntimeError('I am useless')
+    \end{codeboxtc}
+    \invisible<1>{
+      \begin{overprint}
+        \onslide<2>\BeamerShowCode{
+          minipage width=1.0\textwidth, box scale=1.0,
+          listing file={file.cpp}, language=cpp}{C++ code loaded from file}{}
+        \onslide<3>\BeamerShowCode{
+          minipage width=1.0\textwidth, box scale=1.0,
+          listing file={file.cpp}, language=cpp}{C++ code loaded from file}{3-4}
+      \end{overprint}}
+   \end{center}
+  \end{minipage}
+\end{frame}
+
+
+\part[Boxes]{Presentation Accents}
+\section{Presentation Accents}
+\subsection{Information Boxes}
+\begin{frame}{Information Boxes}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{itemize}
+    \item Boxes are drawn with \texttt{tcolorbox} package
+    \item<2-> Information box, use the \texttt{infobox} environment
+    \item<3-> Alert box, use the \texttt{alertbox} environment
+    \end{itemize}
+    \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \invisible<1>{
+      \begin{infobox}
+        This is some cool information, you can put whatever in here, including
+        items:
+        \begin{itemize}
+        \item Hello
+        \item World
+        \end{itemize}
+      \end{infobox}
+    }
+    \invisible<1-2>{
+      \begin{alertbox}
+        This is a more eye catching alert box With some very important content.
+      \end{alertbox}
+    }
+  \end{minipage}
+\end{frame}
+
+\subsection{Section Slides}
+\begin{frame}{Section Slides}
+  \begin{itemize}
+  \item Optionally insert between sections
+  \item Variants with (next slide) and without (after next) table of contents
+  \end{itemize}
+\end{frame}
+
+\sectioncontentsframe{Arbitrary Name}{Insert content here}
+\sectionframe{Arbitrary Name}{Insert content here}
+
+\part[Conclusion]{Conclusion}
+\section{Conclusion}
+\begin{frame}{Conclusion}
+  \begin{itemize}
+    \item Presentation Finished!
+  \end{itemize}
+\end{frame}
+
+\part[References]{References}
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  % insert bibliography here
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,174 @@
+\usepackage{pgfkeys}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{minted}
+\usepackage{codebox}
+
+% NU colors
+% from https://brand.northeastern.edu/visual-design/color/
+\definecolor{NURed}{RGB}{200, 16, 46}
+\definecolor{NUGold}{RGB}{164, 128, 74}
+\definecolor{NUOrange001}{RGB}{255,175,128}
+\definecolor{NUOrange002}{RGB}{255,153,102}
+\definecolor{NUOrange003}{RGB}{255,133,79}
+\definecolor{NUOrange004}{RGB}{229,98,28}
+\definecolor{NUOrange005}{RGB}{187,65,0}
+\definecolor{NUYellow001}{RGB}{255,255,165}
+\definecolor{NUYellow002}{RGB}{255,213,128}
+\definecolor{NUYellow003}{RGB}{255,196,75}
+\definecolor{NUYellow004}{RGB}{255,184,56}
+\definecolor{NUYellow005}{RGB}{226,168,85}
+\definecolor{NUGreen001}{RGB}{189,233,201}
+\definecolor{NUGreen002}{RGB}{152,209,181}
+\definecolor{NUGreen003}{RGB}{96,159,128}
+\definecolor{NUGreen004}{RGB}{2,89,68}
+\definecolor{NUGreen005}{RGB}{26,69,56}
+\definecolor{NUBlue001}{RGB}{198,239,252}
+\definecolor{NUBlue002}{RGB}{160,224,239}
+\definecolor{NUBlue003}{RGB}{98,182,208}
+\definecolor{NUBlue004}{RGB}{43,116,150}
+\definecolor{NUBlue005}{RGB}{12,51,84}
+
+% Define colors outside of the scope of beamer themes
+\newcommand{\defaultcolorheading}{NUGreen003}
+
+% highlighted 'headings'
+\newcommand{\colorheading}[1]{\textcolor{\defaultcolorheading}{\LARGE #1}}
+\newcommand{\colorcaption}[1]{\textcolor{\defaultcolorheading}{\footnotesize #1}}
+
+% Section frame, no table of contents displayed
+\newcommand{\sectionframe}[2]{
+  {
+    \setbeamercolor{background canvas}{bg=white}
+    \begin{frame}[noframenumbering, plain]
+      \begin{minipage}{0.475\textwidth}
+        \centering
+        {\usebeamerfont{titlelike}\usebeamercolor[fg]{structure}\huge #1}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        {#2}
+      \end{minipage}
+    \end{frame}
+  }
+}
+
+% Section frame with table of contents
+\newcommand{\sectioncontentsframe}[2]{
+  {
+    \setbeamercolor{background canvas}{bg=white}
+    \begin{frame}[noframenumbering, plain]
+      \begin{center}
+      \begin{minipage}{0.475\textwidth}
+        \centering
+        {\usebeamerfont{titlelike}\usebeamercolor[fg]{structure}\huge #1}
+        \vskip2em
+        \setbeamercolor{normal text}{fg=black}
+        \setbeamertemplate{subsection in toc}{\leavevmode\leftskip=1.2em$\bullet$\hskip0.25em\inserttocsubsection\par}
+        \tableofcontents[currentsection, sectionstyle=hide, subsubsectionstyle=hide]
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.475\textwidth}
+        \centering
+        {#2}
+      \end{minipage}
+      \end{center}
+    \end{frame}
+  }
+}
+
+\newtcolorbox{alertbox}[1][]{enhanced,
+  before skip=2mm,after skip=3mm,
+  boxrule=0.4pt,left=5mm,right=2mm,top=1mm,bottom=1mm,
+  colback=NUYellow001,
+  colframe=NUYellow003,
+  sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+  underlay={%
+    \path[fill=NUYellow005] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[draw=tcbcolframe,shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[fill=NUYellow005,draw=none] (interior.south west) rectangle node[white]{\Huge\bfseries !} ([xshift=4mm]interior.north west);
+  },
+  drop fuzzy shadow,#1}
+
+\newtcolorbox{infobox}[1][]{enhanced,
+  before skip=2mm,after skip=3mm,
+  boxrule=0.4pt,left=5mm,right=2mm,top=1mm,bottom=1mm,
+  colback=NUGreen001,
+  colframe=NUGreen003,
+  sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+  underlay={%
+    \path[fill=NUGreen003] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[draw=tcbcolframe,shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[fill=NUGreen003,draw=none] (interior.south west) rectangle node[white]{\Huge\bfseries i} ([xshift=4mm]interior.north west);
+  },
+  drop fuzzy shadow,#1}
+
+% Pygments theme
+\newcommand{\PygmentsStyle}{colorful}
+
+% default color for boxes
+\newcommand{\CodeBoxFgColor}{NUGreen005}
+\newcommand{\CodeBoxBgColor}{NUGreen001!10}
+\newcommand{\CodeHighlightColor}{NUOrange004!20}
+
+% Boxes to display code
+\newtcblisting[auto counter]{codeboxtc}[4]{%
+  title=#2,
+  listing only,
+  %minted style=\PygmentsStyle,
+  minted language=#1,
+  boxsep=0.25mm,
+  left=1mm,
+  right=1mm,
+  top=1mm,
+  bottom=1mm,
+  colback=\CodeBoxBgColor,
+  colbacktitle=\CodeBoxFgColor,
+  colframe=\CodeBoxFgColor,
+  fonttitle=\scriptsize,
+  minted options={autogobble,fontsize=\small, fontfamily=courier,
+    breaklines=true, linenos, #4},
+  #3
+}
+
+\newtcbinputlisting[auto counter]{\codeinput}[5]{%
+  title=#2,
+  listing only,
+  %minted style=\PygmentsStyle,
+  minted language=#1,
+  boxsep=0.25mm,
+  left=1mm,
+  right=1mm,
+  top=1mm,
+  bottom=1mm,
+  colback=\CodeBoxBgColor,
+  colbacktitle=\CodeBoxFgColor,
+  colframe=\CodeBoxFgColor,
+  fonttitle=\scriptsize,
+  minted options={autogobble,fontsize=\small, fontfamily=courier,
+    breaklines=true, highlightcolor=\CodeHighlightColor, linenos, highlightlines=#4},
+  listing file=#5,
+  #3
+}
+
+\newcommand{\BeamerShowCode}[3]{%
+  \pgfkeys{
+    /highlight lines/.initial=4,
+    /highlight lines/.get=\codehighlight,
+    /highlight lines/.store in=\codehighlight,
+    /extra tcb options/.initial=\empty,
+    /listing file/.initial=file.cpp,
+    /minipage width/.initial=1.0\textwidth,
+    /box scale/.initial=1,
+    /language/.initial=cpp,
+  }
+  \pgfkeys{#1}
+  \scalebox{\pgfkeysvalueof{/box scale}}{
+    \begin{minipage}{\pgfkeysvalueof{/minipage width}}
+      \centering
+      \codeinput{\pgfkeysvalueof{/language}}{#2}
+          {\pgfkeysvalueof{/extra tcb options}}{#3}{\pgfkeysvalueof{/listing
+          file}}
+    \end{minipage}%
+  }
+}
