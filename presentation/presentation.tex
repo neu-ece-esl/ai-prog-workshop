@@ -301,7 +301,9 @@
   \begin{columns}
     \begin{column}{0.6\textwidth}
       \begin{codeboxtc}{text}{AI Prompt (Shortened)}{}{}
-The saved file is a comma separated file with the format outlined in the table below. All time stamps and durations are in seconds. Column Description 1 Sample Time 2 Edge type (0 for RISING, 1 for FALLING) 3 Duration since last edge of same type (e.g. RISING -> RISING) 4 Duration since last edge of opposite type (e.g. FALLING -> RISING). Plot cumulative probability of latency between falling and rising edge from this file.      \end{codeboxtc}
+The saved file is a comma separated file with the format outlined in the table below. All time stamps and durations are in seconds. Column Description 1 Sample Time 2 Edge type (0 for RISING, 1 for FALLING) 3 Duration since last edge of same type (e.g. RISING -> RISING) 4 Duration since last edge of opposite type (e.g. FALLING -> RISING). Plot cumulative probability of latency between falling and rising edge from this file.      
+      \end{codeboxtc}
+      \small\href{https://claude.ai/share/7e11fde4-bb5e-476e-b8f3-9dad820724f5}{Claude AI Session Link}
     \end{column}
     
     \begin{column}{0.4\textwidth}
@@ -317,6 +319,7 @@ The saved file is a comma separated file with the format outlined in the table b
 \end{frame}
 
 \begin{frame}{Level 1: Student Experience (Spring 2024)} 
+    \begin{infobox}
     \begin{itemize}
         \item Excellent high-level discussion about real-time quality impact of
         \begin{itemize}
@@ -325,6 +328,7 @@ The saved file is a comma separated file with the format outlined in the table b
             \item System load 
         \end{itemize}
     \end{itemize}
+    \end{infobox}
     \begin{columns}
         \column{0.33\textwidth}
         \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_busy.png}
@@ -338,37 +342,49 @@ The saved file is a comma separated file with the format outlined in the table b
         \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_timer.png}
         \tiny\centering (c) Hardware Timer
     \end{columns}
+    \vspace{0.5em}
+    \tiny For more details, see repo \href{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/1-script}{neu-ece-esl/ai-prog-workshop/1-script}.  
 \end{frame}
 
 
 \section{Level 2: Code Review and Improvement}
 
-\begin{frame}{Code Review and Improvement: Concept}
-  \begin{itemize}
-    \item Using AI as a coach to review, debug, and improve existing code
-    \item Goal: Support student learning through hint-driven feedback
-    \item Focuses on error identification and code optimization
-    \item Provides guidance without directly giving away answers
-  \end{itemize}
-\end{frame}
+\begin{frame}{Level 2: Code Review and Improvement}
 
-\begin{frame}{Pedagogical Framing: Code Review}
-  The goal is not to let AI do the thinking for students, but to:
+    \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+      \only<1->{\textbf{Pedagogical Need}
+      \small The goal is not to let AI do the thinking for students, but to:
   \begin{itemize}
     \item Scaffold their problem-solving process
     \item Encourage students to first analyze code themselves
     \item Use AI for targeted hints or explanations
     \item Have students reflect on and evaluate AI's suggestions
   \end{itemize}
-  
-  \begin{infobox}
-    This approach promotes:
-    \begin{itemize}
+      }
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \only<2->{\textbf{Technology Solution}
+      \begin{itemize}\small
+        \item Using AI as a coach to review, debug, and improve existing code
+        \item Goal: Support student learning through hint-driven feedback
+        \item Focuses on error identification and code optimization
+        \item Provides guidance without directly giving away answers
+      \end{itemize}
+      }
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \only<3->{\textbf{Benefits to Students}
+    \begin{itemize}\small
       \item Deeper understanding of algorithms and logic
       \item Collaborative learning through discussion of AI output
       \item A mindset of \textit{debugging as discovery}, not just fixing
     \end{itemize}
-  \end{infobox}
+      }
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Example: Faulty Merge Sort}
