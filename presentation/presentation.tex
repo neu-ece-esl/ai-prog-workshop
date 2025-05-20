@@ -388,40 +388,43 @@ The saved file is a comma separated file with the format outlined in the table b
 \end{frame}
 
 \begin{frame}[fragile]{Example: Faulty Merge Sort}
-  \begin{codeboxtc}{python}{Faulty Merge Sort Implementation}{}{}
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
+  \begin{columns}[T]
+    \begin{column}{0.3\textwidth}
+      After students attempt to understand and debug the code themselves:
+      
+      \begin{codeboxtc}{text}{AI Prompt}{}{}
+    "Can you review the following merge sort implementation and highlight any possible errors or inefficiencies? Please explain what is wrong, suggest corrections, and explain how the code can be made more efficient and robust."
+      \end{codeboxtc}
+    \end{column}
+    
+    \begin{column}{0.65\textwidth}
+      \vspace{-1.5em}
+      \begin{codeboxtc}{python}{Faulty Merge Sort Implementation}{}{fontsize=\scriptsize}
+    def merge_sort(arr):
+        if len(arr) <= 1:
+            return arr
+        mid = len(arr) // 2
+        left = merge_sort(arr[:mid])
+        right = merge_sort(arr[mid]) 
+        return merge(left, right)
 
-    mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid]) 
+    def merge(left, right):
+        sorted_list = []
+        i = j = 0
+        while i < len(left) or j < len(right):          
+            if i < len(left) and (j >= len(right) or left[i] < right[j]):
+                sorted_list.append(left[i])
+                i += 1
+            else:
+                sorted_list.append(right[j])
+                j += 1
+        return sorted_list
+      \end{codeboxtc}
 
-    return merge(left, right)
-
-def merge(left, right):
-    sorted_list = []
-    i = j = 0
-    while i < len(left) or j < len(right):
-        
-        if i < len(left) and (j >= len(right) or left[i] < right[j]):
-            sorted_list.append(left[i])
-            i += 1
-        else:
-            sorted_list.append(right[j])
-            j += 1
-
-    return sorted_list
-  \end{codeboxtc}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Suggested AI Prompt for Code Review}
-  After students attempt to understand and debug the code themselves:
-  
-  \begin{codeboxtc}{text}{AI Prompt}{}{}
-"Can you review the following merge sort implementation and highlight any possible errors or inefficiencies? Please explain what is wrong, suggest corrections, and explain how the code can be made more efficient and robust."
-  \end{codeboxtc}
-\end{frame}
 
 \begin{frame}{Sample AI Response: Identified Issues (1/2)}
   \begin{enumerate}
@@ -447,29 +450,37 @@ def merge(left, right):
 \end{frame}
 
 \begin{frame}[fragile]{Corrected Implementation}
-  \begin{codeboxtc}{python}{Corrected Merge Sort}{}{}
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
-    return merge(left, right)
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+    
+    \begin{column}{0.5\textwidth}
+      \begin{codeboxtc}{python}{Corrected Merge Sort}{}{fontsize=\footnotesize}
+    def merge_sort(arr):
+        if len(arr) <= 1:
+            return arr
+        mid = len(arr) // 2
+        left = merge_sort(arr[:mid])
+        right = merge_sort(arr[mid:])
+        return merge(left, right)
 
-def merge(left, right):
-    sorted_list = []
-    i = j = 0
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            sorted_list.append(left[i])
-            i += 1
-        else:
-            sorted_list.append(right[j])
-            j += 1
-    sorted_list.extend(left[i:])
-    sorted_list.extend(right[j:])
-    return sorted_list
-  \end{codeboxtc}
+    def merge(left, right):
+        sorted_list = []
+        i = j = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                sorted_list.append(left[i])
+                i += 1
+            else:
+                sorted_list.append(right[j])
+                j += 1
+        sorted_list.extend(left[i:])
+        sorted_list.extend(right[j:])
+        return sorted_list
+      \end{codeboxtc}
+    \end{column}
+
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Reflection on AI Code Review}
