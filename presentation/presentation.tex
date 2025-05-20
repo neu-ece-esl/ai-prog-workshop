@@ -1,4 +1,4 @@
-\documentclass[xcolor={dvipsnames}, aspectratio=169]{beamer}
+\documentclass[xcolor=dvipsnames, aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
@@ -12,6 +12,8 @@
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 \usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,positioning,arrows.meta}
 \graphicspath{{media}, {images}}
 \input{beamersetup}
 \graphicspath{{media}, {images}}
@@ -72,25 +74,55 @@
     \end{column}
   \end{columns}
 \end{frame}
-\end{frame}
 
 \section{Increasing Abstraction in Programming}
 
 \begin{frame}{Evolution of Programming Abstractions}
-  \begin{itemize}
-    \item Programming has always moved toward higher levels of abstraction
-    \item Historical progression:
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
       \begin{itemize}
-        \item Machine code → Assembly → C/C++ → Python → Domain-specific languages
+        \item Programming has always moved toward higher levels of abstraction
+        \item Higher abstractions enable developing more complex systems with less code
+        \item Focus shifts from implementation details to system design
+        \item With each new abstraction level, initial concerns about:
+          \begin{itemize}
+            \item Performance
+            \item Loss of control over implementation details
+          \end{itemize}
       \end{itemize}
-    \item Higher abstractions enable developing more complex systems with less code
-    \item Focus shifts from implementation details to system design
-    \item With each new abstraction level, initial concerns about:
-      \begin{itemize}
-        \item Performance
-        \item Loss of control over implementation details
-      \end{itemize}
-  \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.9]
+        % Pyramid layers
+        \fill[blue!20] (0,0) -- (4,0) -- (3.5,0.8) -- (0.5,0.8) -- cycle;
+        \fill[blue!30] (0.5,0.8) -- (3.5,0.8) -- (3,1.6) -- (1,1.6) -- cycle;
+        \fill[blue!40] (1,1.6) -- (3,1.6) -- (2.5,2.4) -- (1.5,2.4) -- cycle;
+        \fill[blue!50] (1.5,2.4) -- (2.5,2.4) -- (2.25,3.0) -- (1.75,3.0) -- cycle;
+        \fill[blue!60] (1.75,3.0) -- (2.25,3.0) -- (2,3.5) -- cycle;
+        
+        % Labels
+        \node[align=center] at (2,0.4) {\small Machine Code};
+        \node[align=center] at (2,1.2) {\small Assembly};
+        \node[align=center] at (2,2.0) {\small C/C++};
+        \node[align=center] at (2,2.7) {\small Python};
+        \node[align=center] at (2,3.3) {\small Domain-specific};
+        
+        % Arrow and properties
+        \draw[-{Stealth[scale=0.8]}] (4.5,0) -- (4.5,3.5);
+        
+        % Text for properties - right side of arrow
+        \node[anchor=west, align=left, font=\tiny] at (4.6,3.2) {Higher abstraction};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,2.8) {Less code};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,2.4) {Design focus};
+        
+        \node[anchor=west, align=left, font=\tiny] at (4.6,1.2) {More control};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,0.8) {Performance};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,0.4) {Lower abstraction};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Dominance of Higher Abstractions}
