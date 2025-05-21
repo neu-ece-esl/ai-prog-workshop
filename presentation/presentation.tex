@@ -300,9 +300,9 @@
 \begin{frame}[fragile]{Level 1 Example: Prompt and Output}
   \begin{columns}
     \begin{column}{0.6\textwidth}
-    \begin{tcolorbox}[enhanced, colback=gray!5, colframe=gray!40, title=AI Prompt, fonttitle=\small, arc=0mm, boxrule=0.1pt]
+    \begin{promptbox}
       The saved file is a comma separated file with the format outlined in the table below. All time stamps and durations are in seconds. Column Description 1 Sample Time 2 Edge type (0 for RISING, 1 for FALLING) 3 Duration since last edge of same type (e.g. RISING -> RISING) 4 Duration since last edge of opposite type (e.g. FALLING -> RISING). Plot cumulative probability of latency between falling and rising edge from this file.      
-      \end{tcolorbox}
+    \end{promptbox}
       \small\href{https://claude.ai/share/7e11fde4-bb5e-476e-b8f3-9dad820724f5}{Claude AI Session Link}
     \end{column}
     
@@ -393,10 +393,10 @@
   \begin{columns}[T]
     \begin{column}{0.42\textwidth}
       After students attempt to understand and debug the code themselves:
-      \begin{tcolorbox}[enhanced, colback=gray!5, colframe=gray!40, title=AI Prompt, fonttitle=\small, arc=0mm, boxrule=0.1pt]
+      \begin{promptbox}
       %\begin{codeboxtc}{text}{AI Prompt}{}{linenos=false, frame=none, breaklines=false}
 Can you review the following merge sort implementation and highlight any possible errors or inefficiencies? Please explain what is wrong, suggest corrections, and explain how the code can be made more efficient and robust.
-      \end{tcolorbox}
+      \end{promptbox}
       %\end{codeboxtc}
     \end{column}
     
