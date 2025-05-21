@@ -385,19 +385,22 @@ The saved file is a comma separated file with the format outlined in the table b
       }
     \end{column}
   \end{columns}
+  \vspace{0.5em}
+  \tiny For more details, see repo \href{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/2-review}{neu-ece-esl/ai-prog-workshop/2-review}.  
 \end{frame}
 
-\begin{frame}[fragile]{Example: Faulty Merge Sort}
+\begin{frame}[fragile]{Level 2: Example Merge Sort}
   \begin{columns}[T]
-    \begin{column}{0.3\textwidth}
+    \begin{column}{0.42\textwidth}
       After students attempt to understand and debug the code themselves:
-      
-      \begin{codeboxtc}{text}{AI Prompt}{}{}
-    "Can you review the following merge sort implementation and highlight any possible errors or inefficiencies? Please explain what is wrong, suggest corrections, and explain how the code can be made more efficient and robust."
-      \end{codeboxtc}
+      \begin{tcolorbox}[enhanced, colback=gray!5, colframe=gray!40, title=AI Prompt, fonttitle=\small, arc=0mm, boxrule=0.1pt]
+      %\begin{codeboxtc}{text}{AI Prompt}{}{linenos=false, frame=none, breaklines=false}
+Can you review the following merge sort implementation and highlight any possible errors or inefficiencies? Please explain what is wrong, suggest corrections, and explain how the code can be made more efficient and robust.
+      \end{tcolorbox}
+      %\end{codeboxtc}
     \end{column}
     
-    \begin{column}{0.65\textwidth}
+    \begin{column}{0.52\textwidth}
       \vspace{-1.5em}
       \begin{codeboxtc}{python}{Faulty Merge Sort Implementation}{}{fontsize=\scriptsize}
     def merge_sort(arr):
@@ -407,7 +410,6 @@ The saved file is a comma separated file with the format outlined in the table b
         left = merge_sort(arr[:mid])
         right = merge_sort(arr[mid]) 
         return merge(left, right)
-
     def merge(left, right):
         sorted_list = []
         i = j = 0
@@ -418,44 +420,71 @@ The saved file is a comma separated file with the format outlined in the table b
             else:
                 sorted_list.append(right[j])
                 j += 1
-        return sorted_list
-      \end{codeboxtc}
-
+        return sorted_list\end{codeboxtc}
     \end{column}
   \end{columns}
 \end{frame}
 
-
-\begin{frame}{Sample AI Response: Identified Issues (1/2)}
-  \begin{enumerate}
-    \item \textbf{Incorrect Slice in Recursive Call}
-      \begin{itemize}
-        \item \texttt{right = merge\_sort(arr[mid])} should be \texttt{arr[mid:]}
-      \end{itemize}
-    
-    \item \textbf{Unsafe Loop Condition}
-      \begin{itemize}
-        \item \texttt{while i < len(left) or j < len(right)} should use \texttt{and} to avoid \texttt{IndexError}
-      \end{itemize}
-  \end{enumerate}
-\end{frame}
-
-\begin{frame}{Sample AI Response: Identified Issues (2/2)}
-  \begin{enumerate}\setcounter{enumi}{2}
-    \item \textbf{Missing Appending of Remaining Elements}
-      \begin{itemize}
-        \item Any unprocessed elements in \texttt{left} or \texttt{right} should be appended after the loop
-      \end{itemize}
-  \end{enumerate}
-\end{frame}
-
-\begin{frame}[fragile]{Corrected Implementation}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
+\begin{frame}[fragile]{Level 2 Example: Merge Sort Review}
+  \begin{columns}[T]
+    \begin{column}{0.42\textwidth}
+      \begin{enumerate}
+        \item \textbf{Incorrect Slice in Recursive Call}
+          \begin{itemize}
+            \item \texttt{right = merge\_sort(arr[mid])} should be \texttt{arr[mid:]}
+          \end{itemize}
+        
+        \item \textbf{Unsafe Loop Condition}
+          \begin{itemize}
+            \item \texttt{while i < len(left) or j < len(right)} should use \texttt{and} to avoid \texttt{IndexError}
+          \end{itemize}
+        \item \textbf{Missing Appending of Remaining Elements}
+          \begin{itemize}
+            \item Any unprocessed elements in \texttt{left} or \texttt{right} should be appended after the loop
+          \end{itemize}
+      \end{enumerate}
     \end{column}
     
-    \begin{column}{0.5\textwidth}
-      \begin{codeboxtc}{python}{Corrected Merge Sort}{}{fontsize=\footnotesize}
+    \begin{column}{0.52\textwidth}
+      \vspace{-1.5em}
+      \begin{codeboxtc}{python}{Faulty Merge Sort Implementation}{}{fontsize=\scriptsize}
+    def merge_sort(arr):
+        if len(arr) <= 1:
+            return arr
+        mid = len(arr) // 2
+        left = merge_sort(arr[:mid])
+        right = merge_sort(arr[mid]) 
+        return merge(left, right)
+    def merge(left, right):
+        sorted_list = []
+        i = j = 0
+        while i < len(left) or j < len(right):          
+            if i < len(left) and (j >= len(right) or left[i] < right[j]):
+                sorted_list.append(left[i])
+                i += 1
+            else:
+                sorted_list.append(right[j])
+                j += 1
+        return sorted_list\end{codeboxtc}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Level 2 Example: Merge Sort Corrected}
+  \begin{columns}[T]
+    \begin{column}{0.42\textwidth}
+      After receiving AI's response, students should reflect on:
+      \begin{itemize}
+        \item Did the AI catch all the subtle bugs?
+        \item Do they understand \textit{why} those bugs matter?
+        \item Would students benefit from hint-driven support?
+        \item What did they learn from this debugging process?
+      \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.52\textwidth}
+      \vspace{-1.5em}
+      \begin{codeboxtc}{python}{Faulty Merge Sort Implementation}{}{fontsize=\scriptsize}
     def merge_sort(arr):
         if len(arr) <= 1:
             return arr
@@ -476,24 +505,12 @@ The saved file is a comma separated file with the format outlined in the table b
                 j += 1
         sorted_list.extend(left[i:])
         sorted_list.extend(right[j:])
-        return sorted_list
-      \end{codeboxtc}
+        return sorted_list\end{codeboxtc}
     \end{column}
-
   \end{columns}
 \end{frame}
 
-\begin{frame}{Reflection on AI Code Review}
-  After receiving AI's response, students should reflect on:
-  \begin{itemize}
-    \item Did the AI catch all the subtle bugs?
-    \item Do they understand \textit{why} those bugs matter?
-    \item Would students benefit from hint-driven support?
-    \item What did they learn from this debugging process?
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Instructor Activity: Code Review}
+\begin{frame}{Level 2 Code Review: Instructor Activity}
   Design a classroom activity where students use AI as a code reviewer:
   
   \begin{itemize}
