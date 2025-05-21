@@ -774,6 +774,14 @@ A coordinator (username admin) finishes the first phase (after all participants 
     \end{column}
   \end{columns}
   
+  \only<2>{
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[fill=green!50!white, opacity=0.7, text opacity=1.0, 
+            font=\huge\bfseries, text=white, 
+            minimum width=0.6\paperwidth, minimum height=0.3\paperheight,
+            rounded corners=10pt] at (current page.center) {DONE!};
+    \end{tikzpicture}
+  }
 \end{frame}
 
 \begin{frame}{Instructor Activity: Agent Mode}
