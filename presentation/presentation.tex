@@ -28,23 +28,27 @@
   Northeastern University\\
   Boston MA, USA}
 \newcommand{\footername}{AI in Programming Education}
+\newcommand{\setfooter}[2]{\renewcommand{\footername}{\href{#2}{#1}}}
 
 \begin{document}
+\setfooter{AI in Programming Education}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}[plain]
   \titlepage
 \end{frame}
 
-\begin{frame}{Outline}
-  \tableofcontents[part=1]
-  \tableofcontents[hideallsubsections, part=2]
-  \tableofcontents[hideallsubsections, part=3]
-  \tableofcontents[hideallsubsections, part=4]
-  \tableofcontents[hideallsubsections, part=5]
-\end{frame}
+% disabled not usefule, main info is agenda that  has it already
+% \begin{frame}{Outline}
+%   \tableofcontents[part=1]
+%   \tableofcontents[hideallsubsections, part=2]
+%   \tableofcontents[hideallsubsections, part=3]
+%   \tableofcontents[hideallsubsections, part=4]
+%   \tableofcontents[hideallsubsections, part=5]
+% \end{frame}
 
 \part[Introduction]{Introduction}
 \section{Introduction}
+\setfooter{AI in Programming Education}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Workshop Information}
   \begin{columns}
@@ -58,10 +62,8 @@
         \item Shift focus to higher-level design thinking
       \end{itemize}
       
-      \textbf{Logistics \& Agenda}
+      \textbf{Agenda}
       \begin{itemize}\small
-        \item \textbf{Duration:} 1 hour, \textbf{Format:} Interactive
-        \item \textbf{Requirements:} Programming knowledge, laptop
         \item AI in programming education [10 min]
         \item AI assistance levels exploration [15 min]
         \item Hands-on activity design [20 min]
@@ -78,24 +80,19 @@
 \end{frame}
 
 \section{Increasing Abstraction in Programming}
+\setfooter{AI in Programming Education}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Evolution of Programming Abstractions}
   \begin{columns}
     \begin{column}{0.6\textwidth}
       \begin{itemize}
-        \item Always moving toward higher levels of abstraction
-        \item Increase managable system complex with less code
-        \item Shift from implementation to system design
-        \item Standard abstraction concerns:
-          \begin{itemize}
-            \item Performance
-            \item Loss of control over implementation details
-          \end{itemize}
+        \item Abstraction: Increase managable system complex with less code
+        \item Less implementation detail, more system design
+        \item Concerns: (1) performance, (2) loss of control
         \item Abstractions dominate as compilers improve
-        \item Example: Assembly only for utmost performance-critical code
-          \begin{itemize}
-            \item Where human expertise exceeds compiler optimization (for new HW features)
-          \end{itemize}
+        \begin{itemize}
+          \item Example: Assembly only for utmost performance-critical code
+        \end{itemize}
       \end{itemize}
     \end{column}
     
@@ -120,17 +117,17 @@
         \draw[-{Stealth[scale=0.8]}] (4.5,0) -- (4.5,3.5);
         
         % Text for properties - right side of arrow
-        \node[anchor=west, align=left, font=\tiny] at (4.6,3.2) {Higher abstraction};
-        \node[anchor=west, align=left, font=\tiny] at (4.6,2.8) {Less code};
-        \node[anchor=west, align=left, font=\tiny] at (4.6,2.4) {Design focus};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,3.2) {Less code};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,2.8) {More design focus};
         
-        \node[anchor=west, align=left, font=\tiny] at (4.6,1.2) {More control};
-        \node[anchor=west, align=left, font=\tiny] at (4.6,0.8) {Performance};
-        \node[anchor=west, align=left, font=\tiny] at (4.6,0.4) {Lower abstraction};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,0.8) {More control}; 
+        \node[anchor=west, align=left, font=\tiny] at (4.6,0.4) {More implementation detail};
       \end{tikzpicture}
     \end{column}
   \end{columns}
   
+  \vspace{3em}
+
   \begin{alertbox}
     \begin{itemize}
       \item With Generative AI, natural language becomes a new abstraction level
@@ -145,12 +142,12 @@
     \begin{column}{0.6\textwidth}
       \begin{itemize}
         \item GenAI becomes peer programmer (collaborator)
-          \begin{itemize}
-            \item Generating simple scripts with a few sentences
-            \item Reviewing, analyzing, and suggesting improvements
-            \item Code completion, repeating, and expanding code patterns
-            \item Developing complete projects across multiple files
-          \end{itemize}
+          % \begin{itemize}
+          %   \item Generating simple scripts with a few sentences
+          %   \item Reviewing, analyzing, and suggesting improvements
+          %   \item Code completion, repeating, and expanding code patterns
+          %   \item Developing complete projects across multiple files
+          % \end{itemize}
         \item Eases access to: languages, libraries and domains
         \item Led by human creativity, intuition, experience, and problem-solving
         \item Limited to what it abstracted from training data
@@ -175,100 +172,121 @@
 
 \begin{frame}{Changing Role of a Programmer}
   \begin{itemize}
-    \item Focus shifts from \textbf{syntax and implementation mechanics} to \textbf{design, clear vision and intent}
-    \item From \textbf{individual contributor} to \textbf{project team lead} where AI is a \textbf{collaborative team member}
-    \item Enables larger-scale, impactful projects through AI assistance
-    \item Still needs to understand the entire stack to evaluate suggestions and spot issues
+    \item<1-> From \textbf{syntax and implementation mechanics} to \textbf{design, clear vision and intent}
+    \item<2-> From \textbf{individual contributor} to \textbf{project team lead} guiding AI collaborator
+    \begin{itemize}
+      \item<2-> Teamwork enables increasing project scale and impact
+      \item<2-> The lead still needs to understand the entire stack to evaluate suggestions and spot issues
+    \end{itemize}
   \end{itemize}
   
-  %TODO: add image of a pilot and autopilot
-  \begin{alertbox}
-    Comparison with aircraft autopilot:
-    \begin{itemize}
-      \item Autopilot helps with low-level tasks, but pilot remains in control
-      \item Pilot must understand entire aircraft systems to spot and fix issues
-    \end{itemize}
-  \end{alertbox}
-  %TODO: alertbox is not the right thing, need a question box
-  \begin{alertbox}
-    \begin{itemize}
-      \item How do we ensure students understand the underlying technology details?
-      \item How do we guide them to become technology leaders?
-    \end{itemize}
-  \end{alertbox}
+  \vspace{1em}
+
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      %TODO: add image of a pilot and autopilot
+      \only<3->{
+      \begin{alertbox}
+        Comparison with aircraft autopilot:
+        \begin{itemize}
+          \item Pilot is in charge, Autopilot assists 
+          \item Pilot must understand entire aircraft systems to spot and fix issues
+        \end{itemize}
+      \end{alertbox}
+      }
+      \only<4->{
+      \begin{questionbox}
+        \begin{itemize}
+          \item How do we ensure students understand the underlying technology details?
+          \item How do we guide them to become technology leaders?
+        \end{itemize}
+      \end{questionbox}
+      }
+    \end{column}
+    
+    \begin{column}{0.4\textwidth}
+      \only<4->{
+      \centering\includegraphics[width=0.8\textwidth]{images/AutoPilot.png}
+      \tiny\centerline{"AI Autopilot" by ChatGPT from this slide}
+      }
+    \end{column}
+    
+  \end{columns}
 \end{frame}
 
 
 \part[AI Programming Assistance]{AI Programming Assistance}
 \section{Overview of Assistance Levels}
+\setfooter{AI Programming Assistance}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Four Levels of AI Programming Assistance}
   We'll explore four examples of AI programming assistance, with increasing complexity and integration:
   
   \begin{enumerate}
-    \item \textbf{Auxiliary Code Generation}\\
+    \item \textbf{1 Script: Auxiliary Code Generation}\\
     One-shot generation of scripts beyond course focus
     
-    \item \textbf{Code Review and Improvement}\\
+    \item \textbf{2 Review: Code Review and Improvement}\\
     Analyze, debug, and enhance existing code with AI
     
-    \item \textbf{Copilot Integration in VS Code}\\
+    \item \textbf{3 Assist: Copilot Integration in VS Code}\\
     Contextual code completion with GitHub Copilot
     
-    \item \textbf{Agent Mode for Complex Projects}\\
+    \item \textbf{4 Vibe: Agent Mode for Complex Projects}\\
     Agentic AI systems for larger, multi-file codebases
   \end{enumerate}
 \end{frame}
 
-\section{Level 1: Auxiliary Code Generation}
+\section{1 Script: Auxiliary Code Generation}
+\setfooter{1 Script}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/1-script}
 
-\begin{frame}{Auxiliary Code Generation: Overview}
+\begin{frame}{1 Script: Auxiliary Code Generation Overview}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<1->{\textbf{Pedagogical Need}
       \begin{itemize}\small
         \item Courses focus on in-depth topics requiring full attention
         \item Real-world problems require complex analysis
         \item Not enough time for out-of-domain details
-        \item Opportunity to generate:
-          \begin{itemize}\footnotesize
-            \item Simulation code
-            \item Data loaders
-            \item Visualizations
-            \item Diagnostic utilities
-          \end{itemize}
+        % \item Opportunity to generate:
+        %   \begin{itemize}\footnotesize
+        %     \item Simulation code
+        %     \item Data loaders
+        %     \item Visualizations
+        %     \item Diagnostic utilities
+        %   \end{itemize}
       \end{itemize}}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<2->{\textbf{Technology Solution}
       \begin{itemize}\small
         \item Using AI (Claude, ChatGPT) to generate complete scripts
-        \item Applications:
+        %\item Applications:
           \begin{itemize}\footnotesize
             \item Data analysis
             \item Visualization
             \item Processing
           \end{itemize}
-        \item Tackles complex coding tasks
+        %\item Tackles complex coding tasks
         \item Useful for tasks outside course focus
       \end{itemize}}
     \end{column}
-    
-    \begin{column}{0.33\textwidth}
-      \only<3->{\textbf{Benefits to Students}
-      \begin{itemize}\small
-        \item Focus on primary course objectives
-        \item Analyze and interpret results
-        \item Gain experiential learning in larger context
-        \item Reduce cognitive load
-        \item More time for higher-order thinking
-      \end{itemize}}
-    \end{column}
   \end{columns}
+  
+  \only<3->{\begin{infobox}
+    \textbf{Benefits to Students}
+    \begin{itemize}\small
+      \item Focus on primary course objectives
+      \item Analyze and interpret results
+      \item Gain experiential learning in larger context
+      \item Reduce cognitive load
+      \item More time for higher-order thinking
+    \end{itemize}
+  \end{infobox}}
 \end{frame}
 
-\begin{frame}{Level 1 Example: Real-time Analysis}
+\begin{frame}{1 Script Example: Real-time Analysis}
   \begin{columns}[T]
     \begin{column}{0.6\textwidth}
       \begin{itemize}
@@ -284,7 +302,7 @@
     \end{column}
     
     \begin{column}{0.35\textwidth}
-      \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/presentation/images/edgeutil.png}
+      \includegraphics[width=\textwidth]{images/edgeutil.png}
       \tiny\centerline{PWM signal}
     \end{column}
   \end{columns}
@@ -297,7 +315,7 @@
   \end{alertbox}
 \end{frame}
 
-\begin{frame}[fragile]{Level 1 Example: Prompt and Output}
+\begin{frame}[fragile]{1 Script Example: Prompt and Output}
   \begin{columns}
     \begin{column}{0.6\textwidth}
     \begin{promptbox}
@@ -311,14 +329,14 @@
         \item Generated: CSV read (\texttt{pandas}), CDF calculation (\texttt{numpy}), plot and save (\texttt{matplotlib})
         \item 110 lines of \href{https://github.com/neu-ece-esl/ai-prog-workshop/blob/main/1-script/analyze_latency.py}{Python Code}
       \end{itemize}
-      \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/pwm_sleep_edges_loaded_latency_cdf.png}
+      \includegraphics[width=\textwidth]{../1-script/pwm_sleep_edges_loaded_latency_cdf.png}
       \small\centerline{CDF of PWM Signal Latencies}
       
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Level 1: Student Experience (Spring 2024)} 
+\begin{frame}{1 Script: Student Experience (Spring 2024)} 
     \begin{infobox}
     \begin{itemize}
         \item Excellent high-level discussion about real-time quality impact of
@@ -331,15 +349,15 @@
     \end{infobox}
     \begin{columns}
         \column{0.33\textwidth}
-        \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_busy.png}
+        \includegraphics[width=\textwidth]{../1-script/period_busy.png}
         \tiny\centering (a) Busy Loop
         
         \column{0.33\textwidth}
-        \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_sleep.png}
+        \includegraphics[width=\textwidth]{../1-script/period_sleep.png}
         \tiny\centering (b) OS Sleep
         
         \column{0.33\textwidth}
-        \includegraphics[width=\textwidth]{/home/schirner/work/ai-prog-workshop/1-script/period_timer.png}
+        \includegraphics[width=\textwidth]{../1-script/period_timer.png}
         \tiny\centering (c) Hardware Timer
     \end{columns}
     \vspace{0.5em}
@@ -347,12 +365,12 @@
 \end{frame}
 
 
-\section{Level 2: Code Review and Improvement}
+\section{2 Review: Code Review and Improvement}
+\setfooter{2 Review}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/2-review}
 
-\begin{frame}{Level 2: Code Review and Improvement}
-
+\begin{frame}{2 Review: Code Review and Improvement}
     \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<1->{\textbf{Pedagogical Need}
       \small The goal is not to let AI do the thinking for students, but to:
   \begin{itemize}
@@ -364,7 +382,7 @@
       }
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<2->{\textbf{Technology Solution}
       \begin{itemize}\small
         \item Using AI as a coach to review, debug, and improve existing code
@@ -374,22 +392,21 @@
       \end{itemize}
       }
     \end{column}
+    \end{columns}
     
-    \begin{column}{0.33\textwidth}
-      \only<3->{\textbf{Benefits to Students}
-    \begin{itemize}\small
-      \item Deeper understanding of algorithms and logic
-      \item Collaborative learning through discussion of AI output
-      \item A mindset of \textit{debugging as discovery}, not just fixing
-    \end{itemize}
-      }
-    \end{column}
-  \end{columns}
+    \only<3->{\begin{infobox}
+      \textbf{Benefits to Students}
+      \begin{itemize}\small
+        \item Deeper understanding of algorithms and logic
+        \item Collaborative learning through discussion of AI output
+        \item A mindset of \textit{debugging as discovery}, not just fixing
+      \end{itemize}
+    \end{infobox}}
   \vspace{0.5em}
   \tiny For more details, see repo \href{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/2-review}{neu-ece-esl/ai-prog-workshop/2-review}.  
 \end{frame}
 
-\begin{frame}[fragile]{Level 2: Example Merge Sort}
+\begin{frame}[fragile]{2 Review Example: Merge Sort}
   \begin{columns}[T]
     \begin{column}{0.42\textwidth}
       After students attempt to understand and debug the code themselves:
@@ -425,7 +442,7 @@ Can you review the following merge sort implementation and highlight any possibl
   \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Level 2 Example: Merge Sort Review}
+\begin{frame}[fragile]{2 Review Example: Merge Sort Review}
   \begin{columns}[T]
     \begin{column}{0.42\textwidth}
       \begin{enumerate}
@@ -470,7 +487,7 @@ Can you review the following merge sort implementation and highlight any possibl
   \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Level 2 Example: Merge Sort Corrected}
+\begin{frame}[fragile]{2 Review Example: Merge Sort Corrected}
   \begin{columns}[T]
     \begin{column}{0.42\textwidth}
       After receiving AI's response, students should reflect on:
@@ -510,7 +527,7 @@ Can you review the following merge sort implementation and highlight any possibl
   \end{columns}
 \end{frame}
 
-\begin{frame}{Level 2 Code Review: Instructor Activity}
+\begin{frame}{2 Review Code Review: Instructor Activity}
   Design a classroom activity where students use AI as a code reviewer:
   
   \begin{itemize}
@@ -528,11 +545,12 @@ Can you review the following merge sort implementation and highlight any possibl
   \end{itemize}
 \end{frame}
 
-\section{Level 3: Copilot Integration}
+\section{3 Assist: Copilot Integration}
+\setfooter{3 Assist}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/3-assist}
 
-\begin{frame}{Level 3: Copilot in VS Code}
+\begin{frame}{3 Assist: Copilot in VS Code}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<1->{\textbf{Pedagogical Need}
       \begin{itemize}\small
         \item Implementing the \textit{right} way is effort
@@ -557,7 +575,7 @@ Can you review the following merge sort implementation and highlight any possibl
 %      \end{itemize}
 %  \end{itemize}   
 
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<2->{\textbf{Technology Solution}
       \begin{itemize}\small
         \item GitHub Copilot as a coding assistant in VS Code
@@ -565,24 +583,24 @@ Can you review the following merge sort implementation and highlight any possibl
         \item Generates boilerplate code and scaffolds structures from natural language
       \end{itemize}}
     \end{column}
-    
-    \begin{column}{0.33\textwidth}
-      \only<3->{\textbf{Benefits to Students}
-      \begin{itemize}\small
-        \item Helps students focus on higher-level design thinking
-        \item Reduces cognitive load of syntax and boilerplate
-        \begin{itemize}\footnotesize
-          \item Creates room to encourage proper SW design and testing setup
-        \end{itemize}
-        \item Facilitates deeper engagement with programming concepts
-        \item Encourages critical evaluation of AI-generated suggestions
-      \end{itemize}}
-    \end{column}
   \end{columns}
+  
+  \only<3->{\begin{infobox}
+    \textbf{Benefits to Students}
+    \begin{itemize}\small
+      \item Helps students focus on higher-level design thinking
+      \item Reduces cognitive load of syntax and boilerplate
+      \begin{itemize}\footnotesize
+        \item Creates room to encourage proper SW design and testing setup
+      \end{itemize}
+      \item Facilitates deeper engagement with programming concepts
+      \item Encourages critical evaluation of AI-generated suggestions
+    \end{itemize}
+  \end{infobox}}
 \end{frame}
 
 
-\begin{frame}{Level 3 Example: Cluster Visualization}
+\begin{frame}{3 Assist Example: Cluster Visualization}
   \begin{columns}
     \begin{column}{0.6\textwidth}
       \begin{itemize}
@@ -604,7 +622,7 @@ Can you review the following merge sort implementation and highlight any possibl
     \end{column}
     
     \begin{column}{0.4\textwidth}
-      \includegraphics[width=0.9\textwidth]{/home/schirner/work/ai-prog-workshop/3-assist/Cluster.jpeg}
+      \includegraphics[width=0.9\textwidth]{../3-assist/Cluster.jpeg}
       \tiny\centerline{Image: K-Means clustering of customer data}
       \tiny\centerline{\href{https://github.com/neu-ece-esl/ai-prog-workshop/blob/main/3-assist/KMeans_Clustering.ipynb}{Jupyter Notebook}}
 
@@ -618,7 +636,7 @@ Can you review the following merge sort implementation and highlight any possibl
 \end{frame}
 
 
-\begin{frame}{Level 3 Assist: Instructor Activity: Copilot Integration}
+\begin{frame}{3 Assist: Instructor Activity: Copilot Integration}
   Design a classroom activity where students:
   \begin{enumerate}
     \item Start from a partially written script or data processing task
@@ -634,20 +652,21 @@ Can you review the following merge sort implementation and highlight any possibl
   \end{itemize}
 \end{frame}
 
-\section{Level 4: Agent Mode for Complex Projects}
+\section{4 Vibe: Agent Mode for Complex Projects}
+\setfooter{4 Vibe}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/4-vibe}
 
-\begin{frame}{Level 4: Agent Mode for Complex Projects}
+\begin{frame}{4 Vibe: Agent Mode for Complex Projects}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<1->{\textbf{Pedagogical Need}
       \begin{itemize}\small
         \item Experiential learning is key, involving hands-on final projects
         \item Class projects are time-constrained (4-6 weeks), limiting scope
-        \item Opportunity: increase impact using Agent Mode for development
+        %\item Opportunity: increase impact using Agent Mode for development
       \end{itemize}}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<2->{\textbf{Technology Solution}
       \begin{itemize}\small
         \item Using GitHub Copilot Agent Mode to tackle complex, multi-file projects
@@ -655,21 +674,21 @@ Can you review the following merge sort implementation and highlight any possibl
         \item Manages sophisticated projects that would be challenging in classroom contexts
       \end{itemize}}
     \end{column}
-    
-    \begin{column}{0.33\textwidth}
-      \only<3->{\textbf{Benefits to Students}
-      \begin{itemize}\small
-        \item Focus on system architecture and design principles
-        \item Tackle more ambitious, real-world projects
-        \item Develop system thinking while reducing implementation overhead
-        \item Enables ambitious projects that demonstrate real-world scenarios
-        \item More experiential learning in less time
-      \end{itemize}}
-    \end{column}
   \end{columns}
+  
+  \only<3->{\begin{infobox}
+    \textbf{Benefits to Students}
+    \begin{itemize}\small
+      \item Focus on system architecture and design principles
+      \item Tackle more ambitious, real-world projects
+      \item Develop system thinking while reducing implementation overhead
+      \item Enables ambitious projects that demonstrate real-world scenarios
+      \item More experiential learning in less time
+    \end{itemize}
+  \end{infobox}}
 \end{frame}
 
-\begin{frame}{Level 4: Vibe Coding}
+\begin{frame}{4 Vibe: Vibe Coding}
   \begin{tcolorbox}[colback=green!10!white, colframe=green!60!black, title=Vibe Coding]
     \begin{itemize}
       \item Focuses on rapid prototyping and collaborative iteration with AI
@@ -691,7 +710,7 @@ Can you review the following merge sort implementation and highlight any possibl
   \end{tcolorbox}
 \end{frame}
 
-\begin{frame}{Level 4 Example: HW / SW Co-design Project} 
+\begin{frame}{4 Vibe Example: HW / SW Co-design Project} 
     \centering EECE7368 Hardware/Software Co-design Fall 2024 (\href{https://neu-ece-7368.github.io/}{page})   \begin{columns}[T]
     \begin{column}{0.4\textwidth}
       \begin{itemize}
@@ -721,7 +740,7 @@ Can you review the following merge sort implementation and highlight any possibl
   \end{columns}
 \end{frame}
 
-\begin{frame}{Level 4 Example: Group Organization Tool}
+\begin{frame}{4 Vibe Example: Group Organization Tool}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \begin{itemize}
@@ -751,7 +770,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
   \end{columns}
 \end{frame}
 
-\begin{frame}{Level 4 Example: Group Organization Tool 2}
+\begin{frame}{4 Vibe Example: Group Organization Tool 2}
   \begin{columns}[T]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
@@ -775,7 +794,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
   \end{columns}
 \end{frame}
 
-\begin{frame}{Level 4 Example: Group Organization Tool (Reflection)}
+\begin{frame}{4 Vibe Example: Group Organization Tool (Reflection)}
 \begin{itemize}
   \item App generation demonstrates technical capabilities, but lacks pedagogical framing.
   \item No learning involved; the domain is outside my expertise, making it difficult to digest and evaluate the generated code.
@@ -791,7 +810,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
 \end{alertbox}
 \end{frame}
 
-\begin{frame}{Instructor Activity: Agent Mode}
+\begin{frame}{4 Vibe: Instructor Activity}
   Consider how you might use Agent Mode in your teaching:
   
   \begin{enumerate}
@@ -806,6 +825,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
 
 \part[Hands-on Activity]{Hands-on Activity}
 \section{Activity Design}
+\setfooter{Hands-on Activity}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Hands-on Activity Overview}
   
@@ -846,6 +866,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
 
 \part[Discussion and Reflection]{Discussion and Reflection}
 \section{Show \& Tell}
+\setfooter{Discussion and Reflection}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Share and Discuss}
   \begin{itemize}
@@ -856,6 +877,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
 \end{frame}
 
 \section{Reflection}
+\setfooter{Discussion and Reflection}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{comment}
 \begin{frame}{Impact on Learning}
@@ -883,23 +905,17 @@ A coordinator (username admin) finishes the first phase (after all participants 
         \item Support each other in programming education evolution
       \end{itemize}
     \item Next step: kick-off programming community meeting
+    \vspace{3em}
+    \begin{infobox}
+      Let's build a collaborative, forward-thinking community of educators who embrace AI not as a shortcut—but as a tool for thoughtful, empowering, and meaningful learning.
+    \end{infobox}
   \end{itemize}
 \end{frame}
 
 \part[Conclusion]{Conclusion}
 \section{Conclusion}
-
-\begin{frame}{Contributing \& Continuing the Conversation}
-  We welcome contributions from instructors adapting these resources:
-  \begin{itemize}
-    \item Fork the repository and customize materials
-    \item Submit issues or suggestions for improvement
-    \item Add your own classroom AI integration examples
-  \end{itemize}
-  
-  Let's build a collaborative, forward-thinking community of educators who embrace AI not as a shortcut—but as a tool for thoughtful, empowering, and meaningful learning.
-\end{frame}
-
+\setfooter{Conclusion}{https://github.com/neu-ece-esl/ai-prog-workshop}
+ 
 
 \begin{frame}{Thank You!}
   \begin{center}
