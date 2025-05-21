@@ -1,0 +1,14 @@
+presentation/_minted-presentation
+presentation/*.aux
+presentation/*.bbl
+presentation/*.blg
+presentation/*.log
+presentation/*.out
+presentation/presentation.fdb_latexmk
+presentation/presentation.fls
+presentation/presentation.listing
+presentation/presentation.nav
+presentation/presentation.snm
+presentation/presentation.toc
+presentation/presentation.vrb
+presentation/presentation.pdf
