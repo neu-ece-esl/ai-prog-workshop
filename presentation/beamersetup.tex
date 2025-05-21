@@ -172,3 +172,14 @@
     \end{minipage}%
   }
 }
+
+% Custom promptbox environment for AI prompts
+\newtcolorbox{promptbox}[1][]{enhanced,
+  colback=gray!5,
+  colframe=gray!40,
+  title=AI Prompt,
+  fonttitle=\small,
+  arc=0mm,
+  boxrule=0.1pt,
+  #1
+}
