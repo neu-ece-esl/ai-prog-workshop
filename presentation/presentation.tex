@@ -10,7 +10,7 @@
 \usepackage{subcaption}
 \usepackage{cancel}
 \usepackage{algorithm}
-\usepackage{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
 \usepackage[noend]{algpseudocode}
 \usepackage{standalone}
 \usepackage{tikz}
@@ -28,8 +28,10 @@
   Northeastern University\\
   Boston MA, USA}
 \newcommand{\footername}{AI in Programming Education}
+\newcommand{\setfooter}[2]{\renewcommand{\footername}{\href{#2}{#1}}}
 
 \begin{document}
+\setfooter{AI in Programming Education}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}[plain]
   \titlepage
@@ -46,6 +48,7 @@
 
 \part[Introduction]{Introduction}
 \section{Introduction}
+\setfooter{AI in Programming Education}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Workshop Information}
   \begin{columns}
@@ -77,6 +80,7 @@
 \end{frame}
 
 \section{Increasing Abstraction in Programming}
+\setfooter{AI in Programming Education}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Evolution of Programming Abstractions}
   \begin{columns}
@@ -213,6 +217,7 @@
 
 \part[AI Programming Assistance]{AI Programming Assistance}
 \section{Overview of Assistance Levels}
+\setfooter{AI Programming Assistance}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Four Levels of AI Programming Assistance}
   We'll explore four examples of AI programming assistance, with increasing complexity and integration:
@@ -233,6 +238,7 @@
 \end{frame}
 
 \section{1 Script: Auxiliary Code Generation}
+\setfooter{1 Script}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/1-script}
 
 \begin{frame}{1 Script: Auxiliary Code Generation Overview}
   \begin{columns}[T]
@@ -360,6 +366,7 @@
 
 
 \section{2 Review: Code Review and Improvement}
+\setfooter{2 Review}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/2-review}
 
 \begin{frame}{2 Review: Code Review and Improvement}
 
@@ -541,6 +548,7 @@ Can you review the following merge sort implementation and highlight any possibl
 \end{frame}
 
 \section{3 Assist: Copilot Integration}
+\setfooter{3 Assist}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/3-assist}
 
 \begin{frame}{3 Assist: Copilot in VS Code}
   \begin{columns}[T]
@@ -647,6 +655,7 @@ Can you review the following merge sort implementation and highlight any possibl
 \end{frame}
 
 \section{4 Vibe: Agent Mode for Complex Projects}
+\setfooter{4 Vibe}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/4-vibe}
 
 \begin{frame}{4 Vibe: Agent Mode for Complex Projects}
   \begin{columns}[T]
@@ -818,6 +827,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
 
 \part[Hands-on Activity]{Hands-on Activity}
 \section{Activity Design}
+\setfooter{Hands-on Activity}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Hands-on Activity Overview}
   
@@ -858,6 +868,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
 
 \part[Discussion and Reflection]{Discussion and Reflection}
 \section{Show \& Tell}
+\setfooter{Discussion and Reflection}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Share and Discuss}
   \begin{itemize}
@@ -868,6 +879,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
 \end{frame}
 
 \section{Reflection}
+\setfooter{Discussion and Reflection}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{comment}
 \begin{frame}{Impact on Learning}
@@ -900,6 +912,7 @@ A coordinator (username admin) finishes the first phase (after all participants 
 
 \part[Conclusion]{Conclusion}
 \section{Conclusion}
+\setfooter{Conclusion}{https://github.com/neu-ece-esl/ai-prog-workshop}
 
 \begin{frame}{Contributing \& Continuing the Conversation}
   We welcome contributions from instructors adapting these resources:
