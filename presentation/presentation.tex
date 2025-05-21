@@ -35,13 +35,14 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{Outline}
-  \tableofcontents[part=1]
-  \tableofcontents[hideallsubsections, part=2]
-  \tableofcontents[hideallsubsections, part=3]
-  \tableofcontents[hideallsubsections, part=4]
-  \tableofcontents[hideallsubsections, part=5]
-\end{frame}
+% disabled not usefule, main info is agenda that  has it already
+% \begin{frame}{Outline}
+%   \tableofcontents[part=1]
+%   \tableofcontents[hideallsubsections, part=2]
+%   \tableofcontents[hideallsubsections, part=3]
+%   \tableofcontents[hideallsubsections, part=4]
+%   \tableofcontents[hideallsubsections, part=5]
+% \end{frame}
 
 \part[Introduction]{Introduction}
 \section{Introduction}
@@ -58,10 +59,8 @@
         \item Shift focus to higher-level design thinking
       \end{itemize}
       
-      \textbf{Logistics \& Agenda}
+      \textbf{Agenda}
       \begin{itemize}\small
-        \item \textbf{Duration:} 1 hour, \textbf{Format:} Interactive
-        \item \textbf{Requirements:} Programming knowledge, laptop
         \item AI in programming education [10 min]
         \item AI assistance levels exploration [15 min]
         \item Hands-on activity design [20 min]
@@ -83,19 +82,13 @@
   \begin{columns}
     \begin{column}{0.6\textwidth}
       \begin{itemize}
-        \item Always moving toward higher levels of abstraction
-        \item Increase managable system complex with less code
-        \item Shift from implementation to system design
-        \item Standard abstraction concerns:
-          \begin{itemize}
-            \item Performance
-            \item Loss of control over implementation details
-          \end{itemize}
+        \item Abstraction: Increase managable system complex with less code
+        \item Less implementation detail, more system design
+        \item Concerns: (1) performance, (2) loss of control
         \item Abstractions dominate as compilers improve
-        \item Example: Assembly only for utmost performance-critical code
-          \begin{itemize}
-            \item Where human expertise exceeds compiler optimization (for new HW features)
-          \end{itemize}
+        \begin{itemize}
+          \item Example: Assembly only for utmost performance-critical code
+        \end{itemize}
       \end{itemize}
     \end{column}
     
@@ -120,17 +113,17 @@
         \draw[-{Stealth[scale=0.8]}] (4.5,0) -- (4.5,3.5);
         
         % Text for properties - right side of arrow
-        \node[anchor=west, align=left, font=\tiny] at (4.6,3.2) {Higher abstraction};
-        \node[anchor=west, align=left, font=\tiny] at (4.6,2.8) {Less code};
-        \node[anchor=west, align=left, font=\tiny] at (4.6,2.4) {Design focus};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,3.2) {Less code};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,2.8) {More design focus};
         
-        \node[anchor=west, align=left, font=\tiny] at (4.6,1.2) {More control};
-        \node[anchor=west, align=left, font=\tiny] at (4.6,0.8) {Performance};
-        \node[anchor=west, align=left, font=\tiny] at (4.6,0.4) {Lower abstraction};
+        \node[anchor=west, align=left, font=\tiny] at (4.6,0.8) {More control}; 
+        \node[anchor=west, align=left, font=\tiny] at (4.6,0.4) {More implementation detail};
       \end{tikzpicture}
     \end{column}
   \end{columns}
   
+  \vspace{3em}
+
   \begin{alertbox}
     \begin{itemize}
       \item With Generative AI, natural language becomes a new abstraction level
@@ -145,12 +138,12 @@
     \begin{column}{0.6\textwidth}
       \begin{itemize}
         \item GenAI becomes peer programmer (collaborator)
-          \begin{itemize}
-            \item Generating simple scripts with a few sentences
-            \item Reviewing, analyzing, and suggesting improvements
-            \item Code completion, repeating, and expanding code patterns
-            \item Developing complete projects across multiple files
-          \end{itemize}
+          % \begin{itemize}
+          %   \item Generating simple scripts with a few sentences
+          %   \item Reviewing, analyzing, and suggesting improvements
+          %   \item Code completion, repeating, and expanding code patterns
+          %   \item Developing complete projects across multiple files
+          % \end{itemize}
         \item Eases access to: languages, libraries and domains
         \item Led by human creativity, intuition, experience, and problem-solving
         \item Limited to what it abstracted from training data
@@ -175,27 +168,34 @@
 
 \begin{frame}{Changing Role of a Programmer}
   \begin{itemize}
-    \item Focus shifts from \textbf{syntax and implementation mechanics} to \textbf{design, clear vision and intent}
-    \item From \textbf{individual contributor} to \textbf{project team lead} where AI is a \textbf{collaborative team member}
-    \item Enables larger-scale, impactful projects through AI assistance
-    \item Still needs to understand the entire stack to evaluate suggestions and spot issues
+    \item<1-> From \textbf{syntax and implementation mechanics} to \textbf{design, clear vision and intent}
+    \item<2-> From \textbf{individual contributor} to \textbf{project team lead} guiding AI collaborator
+    \begin{itemize}
+      \item<2-> Teamwork enables increasing project scale and impact
+      \item<2-> The lead still needs to understand the entire stack to evaluate suggestions and spot issues
+    \end{itemize}
   \end{itemize}
   
+  \vspace{2em}
+
   %TODO: add image of a pilot and autopilot
+  \only<3->{
   \begin{alertbox}
     Comparison with aircraft autopilot:
     \begin{itemize}
-      \item Autopilot helps with low-level tasks, but pilot remains in control
+      \item Pilot is in charge, Autopilot assists 
       \item Pilot must understand entire aircraft systems to spot and fix issues
     \end{itemize}
   \end{alertbox}
-  %TODO: alertbox is not the right thing, need a question box
-  \begin{alertbox}
+  }
+  \only<4->{
+  \begin{questionbox}
     \begin{itemize}
       \item How do we ensure students understand the underlying technology details?
       \item How do we guide them to become technology leaders?
     \end{itemize}
-  \end{alertbox}
+  \end{questionbox}
+  }
 \end{frame}
 
 
