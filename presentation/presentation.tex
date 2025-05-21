@@ -1,4 +1,4 @@
-\documentclass[xcolor=dvipsnames, aspectratio=169]{beamer}
+\documentclass[xcolor={dvipsnames,table}, aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
@@ -822,6 +822,50 @@ A coordinator (username admin) finishes the first phase (after all participants 
   
   This approach allows students to engage with sophisticated projects while developing valuable system thinking skills.
 \end{frame}
+
+\begin{frame}{Assistance Levels Summary}
+  \colorlet{lightred}{red!60!black}
+  \colorlet{lightgray}{gray!15}
+  \renewcommand{\arraystretch}{1.3}
+  
+  \begin{table}
+    \small
+    \centering
+    %\rowcolors{2}{white}{lightgray}
+    \setlength{\tabcolsep}{3pt}
+    \begin{tabular}{p{1.8cm} p{4cm} p{4cm} p{4cm}}
+    %\rowcolor{lightred}
+    \multicolumn{1}{c}{\textcolor{black}{\textbf{Level}}} & 
+    \multicolumn{1}{c}{\textcolor{black}{\textbf{Pedagogical Need}}} & 
+    \multicolumn{1}{c}{\textcolor{black}{\textbf{Technology Solution}}} & 
+    \multicolumn{1}{c}{\textcolor{black}{\textbf{Benefits to Students}}} \\
+    \toprule
+    
+    \textbf{1 Script} & 
+    Courses are intensive; no time for auxiliary tasks & 
+    Claude/ChatGPT used to generate scripts (analysis, visualization) & 
+    Focus on core learning, reduce cognitive load \\
+    
+    \textbf{2 Review} & 
+    Support student reasoning without replacing it & 
+    AI as a coach to review/debug code; hint-based feedback & 
+    Logic understanding, collaborative discussion \\
+    
+    \textbf{3 Assist} & 
+    Syntax and boilerplate slow down focus on design & 
+    GitHub Copilot offers context-aware completions & 
+    Encourages design thinking, reduces manual coding \\
+    
+    \textbf{4 Vibe} & 
+    Final projects are time-bound; hard to scale & 
+    Copilot Agent Mode for multi-file projects & 
+    Enables ambitious projects, system thinking \\
+    
+    \bottomrule
+    \end{tabular}
+  \end{table}
+\end{frame}
+
 
 \part[Hands-on Activity]{Hands-on Activity}
 \section{Activity Design}
