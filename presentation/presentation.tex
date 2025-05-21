@@ -722,30 +722,58 @@ Can you review the following merge sort implementation and highlight any possibl
 \end{frame}
 
 \begin{frame}{Level 4 Example: Group Organization Tool}
-  \begin{itemize}
-    \item Organizing workshop participants into groups based on interests
-    \item Complex web application development fast-tracked with AI
-    \item Features include:
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
       \begin{itemize}
-        \item User login (by name)
-        \item Interest selection from predefined options
-        \item Admin role for team formation
-        \item Team assignment and display
-        \item Optional team chat functionality
+        \item Organizing workshop participants into groups based on interests
+        \item Complex web application, requires full stack development knowledge
+        \item Too much, too difficult.
+        \item Can AI get it done?
       \end{itemize}
-  \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.5\textwidth}
+      \begin{promptbox}\footnotesize
+        Generate a web page to which session participants can login (just by name no authentication required). After logging in, each participant needs to select from one of the following interests:
+        \begin{itemize}\vspace{-0.5em}
+          \item Code Improvement and Teaching
+          \vspace{-0.5em}
+          \item Code Assistance with CoPilot
+          \vspace{-0.5em}
+          \item Script Generation
+          \vspace{-0.5em}
+          \item Agent Mode for Projects
+          \vspace{-0.5em}
+       \end{itemize}
+A coordinator (username admin) finishes the first phase (after all participants have logged in). Then participants are paired together based on interests into teams (Teams get named team-1, team-2 ...). Each team should contain 2-2 members. The participants should get their team name and team members displayed once the decision is done. Optionally, members in the tam should be able to chat with each other
+      \end{promptbox}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Sample Prompt for Agent Mode}
-  \begin{codeboxtc}{text}{Prompt for GitHub Copilot in VS Code (Agent Mode)}{}{}
-Generate a web page to which session participants can login (just by name no authentication required). After logging in, each participant needs to select from one of the following interests:
-- Code Improvement and Teaching
-- Code Assistance with CoPilot
-- Script Generation
-- Agent Mode for Projects
-
-A coordinator (username admin) finishes the first phase (after all participants have logged in). Then participants are paired together based on interests into teams (Teams get named team-1, team-2 ...). Each team should contain 2-2 members. The participants should get their team name and team members displayed once the decision is done. Optionally, members in the tam should be able to chat with each other
-  \end{codeboxtc}
+\begin{frame}{Level 4 Example: Group Organization Tool 2}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+          \item Generated NPM javascript web application (I have no idea)
+          \item Application almost works out of the box
+      \end{itemize}
+      \begin{alertbox}\small
+          Phase 2: of notifying participants of their group did \textbf{not} work
+      \end{alertbox}
+      \begin{promptbox}\small
+        The website worked and participants could login an dstate interests. However, once the admin as selected "form teams" it gets the message "teams sucessfully formed" but the participants still see the status "waiting for team forming"
+      \end{promptbox}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        
+      \centering\includegraphics[width=0.7\textwidth]{images/GroupOrg.png}
+      \tiny\centerline{Image: Login Page}
+      \centering\includegraphics[width=0.7\textwidth]{images/GroupOrg2.png}
+      \tiny\centerline{Image: Interest Selection}
+    \end{column}
+  \end{columns}
+  
 \end{frame}
 
 \begin{frame}{Instructor Activity: Agent Mode}
