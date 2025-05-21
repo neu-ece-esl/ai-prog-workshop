@@ -242,7 +242,7 @@
 
 \begin{frame}{1 Script: Auxiliary Code Generation Overview}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<1->{\textbf{Pedagogical Need}
       \begin{itemize}\small
         \item Courses focus on in-depth topics requiring full attention
@@ -258,7 +258,7 @@
       \end{itemize}}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<2->{\textbf{Technology Solution}
       \begin{itemize}\small
         \item Using AI (Claude, ChatGPT) to generate complete scripts
@@ -272,18 +272,18 @@
         \item Useful for tasks outside course focus
       \end{itemize}}
     \end{column}
-    
-    \begin{column}{0.33\textwidth}
-      \only<3->{\textbf{Benefits to Students}
-      \begin{itemize}\small
-        \item Focus on primary course objectives
-        \item Analyze and interpret results
-        \item Gain experiential learning in larger context
-        \item Reduce cognitive load
-        \item More time for higher-order thinking
-      \end{itemize}}
-    \end{column}
   \end{columns}
+  
+  \only<3->{\begin{infobox}
+    \textbf{Benefits to Students}
+    \begin{itemize}\small
+      \item Focus on primary course objectives
+      \item Analyze and interpret results
+      \item Gain experiential learning in larger context
+      \item Reduce cognitive load
+      \item More time for higher-order thinking
+    \end{itemize}
+  \end{infobox}}
 \end{frame}
 
 \begin{frame}{1 Script Example: Real-time Analysis}
@@ -369,9 +369,8 @@
 \setfooter{2 Review}{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/2-review}
 
 \begin{frame}{2 Review: Code Review and Improvement}
-
     \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<1->{\textbf{Pedagogical Need}
       \small The goal is not to let AI do the thinking for students, but to:
   \begin{itemize}
@@ -383,7 +382,7 @@
       }
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<2->{\textbf{Technology Solution}
       \begin{itemize}\small
         \item Using AI as a coach to review, debug, and improve existing code
@@ -393,17 +392,16 @@
       \end{itemize}
       }
     \end{column}
+    \end{columns}
     
-    \begin{column}{0.33\textwidth}
-      \only<3->{\textbf{Benefits to Students}
-    \begin{itemize}\small
-      \item Deeper understanding of algorithms and logic
-      \item Collaborative learning through discussion of AI output
-      \item A mindset of \textit{debugging as discovery}, not just fixing
-    \end{itemize}
-      }
-    \end{column}
-  \end{columns}
+    \only<3->{\begin{infobox}
+      \textbf{Benefits to Students}
+      \begin{itemize}\small
+        \item Deeper understanding of algorithms and logic
+        \item Collaborative learning through discussion of AI output
+        \item A mindset of \textit{debugging as discovery}, not just fixing
+      \end{itemize}
+    \end{infobox}}
   \vspace{0.5em}
   \tiny For more details, see repo \href{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/2-review}{neu-ece-esl/ai-prog-workshop/2-review}.  
 \end{frame}
@@ -552,7 +550,7 @@ Can you review the following merge sort implementation and highlight any possibl
 
 \begin{frame}{3 Assist: Copilot in VS Code}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<1->{\textbf{Pedagogical Need}
       \begin{itemize}\small
         \item Implementing the \textit{right} way is effort
@@ -577,7 +575,7 @@ Can you review the following merge sort implementation and highlight any possibl
 %      \end{itemize}
 %  \end{itemize}   
 
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<2->{\textbf{Technology Solution}
       \begin{itemize}\small
         \item GitHub Copilot as a coding assistant in VS Code
@@ -585,20 +583,20 @@ Can you review the following merge sort implementation and highlight any possibl
         \item Generates boilerplate code and scaffolds structures from natural language
       \end{itemize}}
     \end{column}
-    
-    \begin{column}{0.33\textwidth}
-      \only<3->{\textbf{Benefits to Students}
-      \begin{itemize}\small
-        \item Helps students focus on higher-level design thinking
-        \item Reduces cognitive load of syntax and boilerplate
-        \begin{itemize}\footnotesize
-          \item Creates room to encourage proper SW design and testing setup
-        \end{itemize}
-        \item Facilitates deeper engagement with programming concepts
-        \item Encourages critical evaluation of AI-generated suggestions
-      \end{itemize}}
-    \end{column}
   \end{columns}
+  
+  \only<3->{\begin{infobox}
+    \textbf{Benefits to Students}
+    \begin{itemize}\small
+      \item Helps students focus on higher-level design thinking
+      \item Reduces cognitive load of syntax and boilerplate
+      \begin{itemize}\footnotesize
+        \item Creates room to encourage proper SW design and testing setup
+      \end{itemize}
+      \item Facilitates deeper engagement with programming concepts
+      \item Encourages critical evaluation of AI-generated suggestions
+    \end{itemize}
+  \end{infobox}}
 \end{frame}
 
 
@@ -659,7 +657,7 @@ Can you review the following merge sort implementation and highlight any possibl
 
 \begin{frame}{4 Vibe: Agent Mode for Complex Projects}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<1->{\textbf{Pedagogical Need}
       \begin{itemize}\small
         \item Experiential learning is key, involving hands-on final projects
@@ -668,7 +666,7 @@ Can you review the following merge sort implementation and highlight any possibl
       \end{itemize}}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.5\textwidth}
       \only<2->{\textbf{Technology Solution}
       \begin{itemize}\small
         \item Using GitHub Copilot Agent Mode to tackle complex, multi-file projects
@@ -676,18 +674,18 @@ Can you review the following merge sort implementation and highlight any possibl
         \item Manages sophisticated projects that would be challenging in classroom contexts
       \end{itemize}}
     \end{column}
-    
-    \begin{column}{0.33\textwidth}
-      \only<3->{\textbf{Benefits to Students}
-      \begin{itemize}\small
-        \item Focus on system architecture and design principles
-        \item Tackle more ambitious, real-world projects
-        \item Develop system thinking while reducing implementation overhead
-        \item Enables ambitious projects that demonstrate real-world scenarios
-        \item More experiential learning in less time
-      \end{itemize}}
-    \end{column}
   \end{columns}
+  
+  \only<3->{\begin{infobox}
+    \textbf{Benefits to Students}
+    \begin{itemize}\small
+      \item Focus on system architecture and design principles
+      \item Tackle more ambitious, real-world projects
+      \item Develop system thinking while reducing implementation overhead
+      \item Enables ambitious projects that demonstrate real-world scenarios
+      \item More experiential learning in less time
+    \end{itemize}
+  \end{infobox}}
 \end{frame}
 
 \begin{frame}{4 Vibe: Vibe Coding}
