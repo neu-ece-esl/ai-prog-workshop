@@ -530,55 +530,95 @@ Can you review the following merge sort implementation and highlight any possibl
 
 \section{Level 3: Copilot Integration}
 
-\begin{frame}{Copilot Integration: Concept}
-  \begin{itemize}
-    \item GitHub Copilot supports students during coding with context-aware completions
-    \item Can generate boilerplate code and scaffold structures from natural language
-    \item Helps students engage more deeply with \textbf{design}, \textbf{testing}, and \textbf{debugging}
-    \item Handles repetitive coding tasks to focus on higher-level thinking
-  \end{itemize}
+\begin{frame}{Level 3: Copilot in VS Code}
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+      \only<1->{\textbf{Pedagogical Need}
+      \begin{itemize}\small
+        \item Implementing the \textit{right} way is effort
+        \begin{itemize}\footnotesize
+          \item Refactoring for object-oriented design, readability, and maintainability  
+          \item Test harnessing
+          \item Data loaders to deal with large datasets
+        \end{itemize}
+        \item Students need to focus on design and intent
+      \end{itemize}}
+    \end{column}
+
+%  GitHub Copilot isn't just a shortcut—it's a design collaboration tool:
+%  \begin{itemize}
+%    \item Helps translate high-level \textbf{intent} into functional code
+%    \item Encourages focus on solution \textbf{design} rather than syntax
+%    \item Shifts emphasis from "getting code to run" to:
+%      \begin{itemize}
+%        \item \textbf{Designing} robust, readable, purposeful code
+%        \item Reviewing suggestions to ensure alignment with intent
+%        \item Making \textbf{critical decisions} about accepting, rejecting, or revising completions
+%      \end{itemize}
+%  \end{itemize}   
+
+    \begin{column}{0.33\textwidth}
+      \only<2->{\textbf{Technology Solution}
+      \begin{itemize}\small
+        \item GitHub Copilot as a coding assistant in VS Code
+        \item Provides context-aware code completions and suggestions
+        \item Generates boilerplate code and scaffolds structures from natural language
+      \end{itemize}}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \only<3->{\textbf{Benefits to Students}
+      \begin{itemize}\small
+        \item Helps students focus on higher-level design thinking
+        \item Reduces cognitive load of syntax and boilerplate
+        \begin{itemize}\footnotesize
+          \item Creates room to encourage proper SW design and testing setup
+        \end{itemize}
+        \item Facilitates deeper engagement with programming concepts
+        \item Encourages critical evaluation of AI-generated suggestions
+      \end{itemize}}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Pedagogical Framing: Copilot}
-  GitHub Copilot isn't just a shortcut—it's a design collaboration tool:
-  \begin{itemize}
-    \item Helps translate high-level \textbf{intent} into functional code
-    \item Encourages focus on solution \textbf{design} rather than syntax
-    \item Shifts emphasis from "getting code to run" to:
+
+\begin{frame}{Level 3 Example: Cluster Visualization}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
       \begin{itemize}
-        \item \textbf{Designing} robust, readable, purposeful code
-        \item Reviewing suggestions to ensure alignment with intent
-        \item Making \textbf{critical decisions} about accepting, rejecting, or revising completions
+        \item Task: KMeans clustering of customer data
+        \item Students analyze and visualize clustering results
+        \item AI-generated code for data loading, preprocessing, and visualization
       \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Example: Cluster Visualization}
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{/home/schirner/work/ai-prog-workshop/3-assist/Cluster.jpeg}
-  \end{center}
-  \begin{itemize}
-    \item Scatter plot showing KMeans clustering of customers
-    \item Based on annual income and spending score
-    \item Students might analyze or reproduce such results
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Copilot in Action}
-  \begin{center}
-    \textbf{[Animation showing GitHub Copilot completing code]}
-  \end{center}
-  \begin{itemize}
-    \item Well-structured comments guide Copilot suggestions
-    \item Examples of functions Copilot can generate:
+      \vspace{0.5em}
+      \href{https://github.com/neu-ece-esl/ai-prog-workshop/tree/main/3-assist}{Link to Animation: GitHub Copilot completing code}
+      \vspace{0.5em}
       \begin{itemize}
-        \item \texttt{plot\_cluster\_distribution()}
-        \item \texttt{evaluate\_clustering\_quality()}
+        \item Well-structured comments guide Copilot suggestions
+        \item Examples of functions Copilot can generate:
+        \begin{itemize}
+          \item \texttt{plot\_cluster\_distribution()}
+          \item \texttt{evaluate\_clustering\_quality()}
+        \end{itemize}
       \end{itemize}
-  \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.4\textwidth}
+      \includegraphics[width=0.9\textwidth]{/home/schirner/work/ai-prog-workshop/3-assist/Cluster.jpeg}
+      \tiny\centerline{Image: K-Means clustering of customer data}
+      \tiny\centerline{\href{https://github.com/neu-ece-esl/ai-prog-workshop/blob/main/3-assist/KMeans_Clustering.ipynb}{Jupyter Notebook}}
+
+      \begin{itemize}
+        \item Scatter plot showing KMeans clustering of customers
+        \item Based on annual income and spending score
+        \item Students might analyze or reproduce such results
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Instructor Activity: Copilot Integration}
+
+\begin{frame}{Level 3 Assist: Instructor Activity}
   Design a classroom activity where students:
   \begin{enumerate}
     \item Start from a partially written script or data processing task
